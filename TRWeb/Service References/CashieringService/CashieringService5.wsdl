@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CashieringService" targetNamespace="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/Imports">
+      <xsd:import schemaLocation="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc?xsd=xsd0" namespace="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts" />
+      <xsd:import schemaLocation="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICashieringService_GetParkingTicketList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParkingTicketList" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetParkingTicketList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParkingTicketListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetTicketBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketBalance" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetTicketBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_ApplyTicketPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyTicketPayment" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_ApplyTicketPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyTicketPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_VoidTicketPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:VoidTicketPayment" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_VoidTicketPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VoidTicketPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetRealBalanceByParcelNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRealBalanceByParcelNo" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetRealBalanceByParcelNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRealBalanceByParcelNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetRealBalanceByAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRealBalanceByAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetRealBalanceByAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRealBalanceByAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetRealParcelByLastName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRealParcelByLastName" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetRealParcelByLastName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRealParcelByLastNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_ApplyRealPropertyTaxPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyRealPropertyTaxPayment" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_ApplyRealPropertyTaxPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyRealPropertyTaxPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_VoidRealPropertyTaxPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:VoidRealPropertyTaxPayment" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_VoidRealPropertyTaxPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VoidRealPropertyTaxPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetPersonalBalanceByAccountNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalBalanceByAccountNo" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetPersonalBalanceByAccountNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalBalanceByAccountNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetPersonalBalanceByAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalBalanceByAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetPersonalBalanceByAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalBalanceByAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetPersonalBalanceByOwnerName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalBalanceByOwnerName" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetPersonalBalanceByOwnerName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalBalanceByOwnerNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_ApplyPersonalPropertyTaxPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyPersonalPropertyTaxPayment" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_ApplyPersonalPropertyTaxPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyPersonalPropertyTaxPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_VoidPersonalPropertyTaxPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:VoidPersonalPropertyTaxPayment" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_VoidPersonalPropertyTaxPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VoidPersonalPropertyTaxPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetCDABalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCDABalance" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetCDABalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCDABalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_ApplyCDAPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyCDAPayment" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_ApplyCDAPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyCDAPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_VoidCDAPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:VoidCDAPayment" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_VoidCDAPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VoidCDAPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetWaterByCustomerAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWaterByCustomerAccount" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetWaterByCustomerAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWaterByCustomerAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetWaterByCustomerName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWaterByCustomerName" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetWaterByCustomerName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWaterByCustomerNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetWaterByAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWaterByAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetWaterByAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWaterByAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_ApplyWaterPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyWaterPayment" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_ApplyWaterPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyWaterPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_VoidWaterPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:VoidWaterPayment" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_VoidWaterPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VoidWaterPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetAccelaInvoiceOrSetBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccelaInvoiceOrSetBalance" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_GetAccelaInvoiceOrSetBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccelaInvoiceOrSetBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_MakeAccelaPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:MakeAccelaPayment" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_MakeAccelaPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MakeAccelaPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_CreateNewPortal_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewPortal" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_CreateNewPortal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewPortalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_UpdatePortal_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePortal" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_UpdatePortal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePortalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_RequestNewKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestNewKey" />
+  </wsdl:message>
+  <wsdl:message name="ICashieringService_RequestNewKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestNewKeyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICashieringService">
+    <wsdl:operation name="GetParkingTicketList">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetParkingTicketList" message="tns:ICashieringService_GetParkingTicketList_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetParkingTicketListResponse" message="tns:ICashieringService_GetParkingTicketList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketBalance">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetTicketBalance" message="tns:ICashieringService_GetTicketBalance_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetTicketBalanceResponse" message="tns:ICashieringService_GetTicketBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyTicketPayment">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyTicketPayment" message="tns:ICashieringService_ApplyTicketPayment_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyTicketPaymentResponse" message="tns:ICashieringService_ApplyTicketPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidTicketPayment">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidTicketPayment" message="tns:ICashieringService_VoidTicketPayment_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidTicketPaymentResponse" message="tns:ICashieringService_VoidTicketPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRealBalanceByParcelNo">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetRealBalanceByParcelNo" message="tns:ICashieringService_GetRealBalanceByParcelNo_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetRealBalanceByParcelNoResponse" message="tns:ICashieringService_GetRealBalanceByParcelNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRealBalanceByAddress">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetRealBalanceByAddress" message="tns:ICashieringService_GetRealBalanceByAddress_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetRealBalanceByAddressResponse" message="tns:ICashieringService_GetRealBalanceByAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRealParcelByLastName">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetRealParcelByLastName" message="tns:ICashieringService_GetRealParcelByLastName_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetRealParcelByLastNameResponse" message="tns:ICashieringService_GetRealParcelByLastName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyRealPropertyTaxPayment">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyRealPropertyTaxPayment" message="tns:ICashieringService_ApplyRealPropertyTaxPayment_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyRealPropertyTaxPaymentResponse" message="tns:ICashieringService_ApplyRealPropertyTaxPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidRealPropertyTaxPayment">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidRealPropertyTaxPayment" message="tns:ICashieringService_VoidRealPropertyTaxPayment_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidRealPropertyTaxPaymentResponse" message="tns:ICashieringService_VoidRealPropertyTaxPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalBalanceByAccountNo">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetPersonalBalanceByAccountNo" message="tns:ICashieringService_GetPersonalBalanceByAccountNo_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetPersonalBalanceByAccountNoResponse" message="tns:ICashieringService_GetPersonalBalanceByAccountNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalBalanceByAddress">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetPersonalBalanceByAddress" message="tns:ICashieringService_GetPersonalBalanceByAddress_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetPersonalBalanceByAddressResponse" message="tns:ICashieringService_GetPersonalBalanceByAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalBalanceByOwnerName">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetPersonalBalanceByOwnerName" message="tns:ICashieringService_GetPersonalBalanceByOwnerName_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetPersonalBalanceByOwnerNameResponse" message="tns:ICashieringService_GetPersonalBalanceByOwnerName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyPersonalPropertyTaxPayment">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyPersonalPropertyTaxPayment" message="tns:ICashieringService_ApplyPersonalPropertyTaxPayment_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyPersonalPropertyTaxPaymentResponse" message="tns:ICashieringService_ApplyPersonalPropertyTaxPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidPersonalPropertyTaxPayment">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidPersonalPropertyTaxPayment" message="tns:ICashieringService_VoidPersonalPropertyTaxPayment_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidPersonalPropertyTaxPaymentResponse" message="tns:ICashieringService_VoidPersonalPropertyTaxPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCDABalance">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetCDABalance" message="tns:ICashieringService_GetCDABalance_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetCDABalanceResponse" message="tns:ICashieringService_GetCDABalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyCDAPayment">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyCDAPayment" message="tns:ICashieringService_ApplyCDAPayment_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyCDAPaymentResponse" message="tns:ICashieringService_ApplyCDAPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidCDAPayment">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidCDAPayment" message="tns:ICashieringService_VoidCDAPayment_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidCDAPaymentResponse" message="tns:ICashieringService_VoidCDAPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterByCustomerAccount">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetWaterByCustomerAccount" message="tns:ICashieringService_GetWaterByCustomerAccount_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetWaterByCustomerAccountResponse" message="tns:ICashieringService_GetWaterByCustomerAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterByCustomerName">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetWaterByCustomerName" message="tns:ICashieringService_GetWaterByCustomerName_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetWaterByCustomerNameResponse" message="tns:ICashieringService_GetWaterByCustomerName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterByAddress">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetWaterByAddress" message="tns:ICashieringService_GetWaterByAddress_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetWaterByAddressResponse" message="tns:ICashieringService_GetWaterByAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyWaterPayment">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyWaterPayment" message="tns:ICashieringService_ApplyWaterPayment_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyWaterPaymentResponse" message="tns:ICashieringService_ApplyWaterPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidWaterPayment">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidWaterPayment" message="tns:ICashieringService_VoidWaterPayment_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidWaterPaymentResponse" message="tns:ICashieringService_VoidWaterPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccelaInvoiceOrSetBalance">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetAccelaInvoiceOrSetBalance" message="tns:ICashieringService_GetAccelaInvoiceOrSetBalance_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetAccelaInvoiceOrSetBalanceResponse" message="tns:ICashieringService_GetAccelaInvoiceOrSetBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeAccelaPayment">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/MakeAccelaPayment" message="tns:ICashieringService_MakeAccelaPayment_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/MakeAccelaPaymentResponse" message="tns:ICashieringService_MakeAccelaPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewPortal">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/CreateNewPortal" message="tns:ICashieringService_CreateNewPortal_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/CreateNewPortalResponse" message="tns:ICashieringService_CreateNewPortal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePortal">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/UpdatePortal" message="tns:ICashieringService_UpdatePortal_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/UpdatePortalResponse" message="tns:ICashieringService_UpdatePortal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestNewKey">
+      <wsdl:input wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/RequestNewKey" message="tns:ICashieringService_RequestNewKey_InputMessage" />
+      <wsdl:output wsam:Action="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/RequestNewKeyResponse" message="tns:ICashieringService_RequestNewKey_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="CashieringService">
+    <wsdl:port name="BasicHttpBinding_ICashieringService" binding="i0:BasicHttpBinding_ICashieringService">
+      <soap:address location="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

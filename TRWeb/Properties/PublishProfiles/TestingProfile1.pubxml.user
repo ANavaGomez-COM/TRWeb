@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>\\erpbiztalk\inetpub\wwwroot\TRWeb_Test</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Administration.aspx">
+      <publishTime>08/16/2016 14:01:34</publishTime>
+    </File>
+    <File Include="AuthAdd.aspx">
+      <publishTime>12/02/2014 09:57:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.Common.dll">
+      <publishTime>06/28/2011 01:35:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.WebForms.dll">
+      <publishTime>06/28/2011 01:35:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.DTSPipelineWrap.dll">
+      <publishTime>02/21/2014 04:27:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SQLServer.ManagedDTS.dll">
+      <publishTime>06/18/2016 01:52:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.PipelineHost.dll">
+      <publishTime>02/21/2014 04:26:54</publishTime>
+    </File>
+    <File Include="bin/TRWeb.dll">
+      <publishTime>09/13/2016 09:55:27</publishTime>
+    </File>
+    <File Include="bin/TRWeb.XmlSerializers.dll">
+      <publishTime>09/13/2016 09:55:29</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>01/12/2016 15:45:42</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>08/13/2014 08:46:44</publishTime>
+    </File>
+    <File Include="Housing.aspx">
+      <publishTime>12/03/2014 11:00:53</publishTime>
+    </File>
+    <File Include="NotifAdd.aspx">
+      <publishTime>12/02/2014 08:26:11</publishTime>
+    </File>
+    <File Include="Portal.aspx">
+      <publishTime>11/19/2014 11:24:42</publishTime>
+    </File>
+    <File Include="PropertyTax.aspx">
+      <publishTime>12/03/2014 11:28:06</publishTime>
+    </File>
+    <File Include="Report.aspx">
+      <publishTime>09/10/2015 11:13:19</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1-vsdoc.js">
+      <publishTime>08/13/2014 08:46:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1.js">
+      <publishTime>08/13/2014 08:46:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1.min.js">
+      <publishTime>08/13/2014 08:46:44</publishTime>
+    </File>
+    <File Include="Service References/CashieringService/TRWeb.CashieringService.AccelaResponse.datasource">
+      <publishTime>08/03/2016 16:13:16</publishTime>
+    </File>
+    <File Include="Service References/CashieringService/TRWeb.CashieringService.CDABalanceResponse.datasource">
+      <publishTime>08/03/2016 16:13:15</publishTime>
+    </File>
+    <File Include="Service References/CashieringService/TRWeb.CashieringService.CreateDWRecordResponse.datasource">
+      <publishTime>08/03/2016 16:13:15</publishTime>
+    </File>
+    <File Include="Service References/CashieringService/TRWeb.CashieringService.ParkingTicketResponse.datasource">
+      <publishTime>08/03/2016 16:13:15</publishTime>
+    </File>
+    <File Include="Service References/CashieringService/TRWeb.CashieringService.PersonalPropertyTaxResponse.datasource">
+      <publishTime>08/03/2016 16:13:15</publishTime>
+    </File>
+    <File Include="Service References/CashieringService/TRWeb.CashieringService.PortalResponse.datasource">
+      <publishTime>08/03/2016 16:13:16</publishTime>
+    </File>
+    <File Include="Service References/CashieringService/TRWeb.CashieringService.RealPropertyTaxResponse.datasource">
+      <publishTime>08/03/2016 16:13:15</publishTime>
+    </File>
+    <File Include="Service References/CashieringService/TRWeb.CashieringService.UpdateResponse.datasource">
+      <publishTime>08/03/2016 16:13:16</publishTime>
+    </File>
+    <File Include="Service References/CashieringService/TRWeb.CashieringService.WaterUtilityResponse.datasource">
+      <publishTime>08/03/2016 16:13:16</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>09/08/2016 09:30:48</publishTime>
+    </File>
+    <File Include="SourceAdd.aspx">
+      <publishTime>12/02/2014 08:18:49</publishTime>
+    </File>
+    <File Include="Styles/Site.css">
+      <publishTime>09/09/2015 16:50:14</publishTime>
+    </File>
+    <File Include="Ticket.aspx">
+      <publishTime>12/03/2014 10:38:55</publishTime>
+    </File>
+    <File Include="UserError.aspx">
+      <publishTime>11/19/2014 09:14:32</publishTime>
+    </File>
+    <File Include="WaterBill.aspx">
+      <publishTime>12/03/2014 11:21:40</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/13/2016 09:55:31</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

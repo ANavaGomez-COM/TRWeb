@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\obj\Debug\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

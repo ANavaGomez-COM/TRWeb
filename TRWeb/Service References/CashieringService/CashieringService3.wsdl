@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:i0="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts" location="http://erpbiztalk.cityofmadison.com:95/CashieringService/CashieringService.svc?wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_ICashieringService" type="i0:ICashieringService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetParkingTicketList">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetParkingTicketList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketBalance">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetTicketBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyTicketPayment">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyTicketPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidTicketPayment">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidTicketPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRealBalanceByParcelNo">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetRealBalanceByParcelNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRealBalanceByAddress">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetRealBalanceByAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRealParcelByLastName">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetRealParcelByLastName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyRealPropertyTaxPayment">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyRealPropertyTaxPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidRealPropertyTaxPayment">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidRealPropertyTaxPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalBalanceByAccountNo">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetPersonalBalanceByAccountNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalBalanceByAddress">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetPersonalBalanceByAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalBalanceByOwnerName">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetPersonalBalanceByOwnerName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyPersonalPropertyTaxPayment">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyPersonalPropertyTaxPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidPersonalPropertyTaxPayment">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidPersonalPropertyTaxPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCDABalance">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetCDABalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyCDAPayment">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyCDAPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidCDAPayment">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidCDAPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterByCustomerAccount">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetWaterByCustomerAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterByCustomerName">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetWaterByCustomerName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterByAddress">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetWaterByAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyWaterPayment">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/ApplyWaterPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidWaterPayment">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/VoidWaterPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccelaInvoiceOrSetBalance">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/GetAccelaInvoiceOrSetBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeAccelaPayment">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/MakeAccelaPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewPortal">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/CreateNewPortal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePortal">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/UpdatePortal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestNewKey">
+      <soap:operation soapAction="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts/ICashieringService/RequestNewKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>
