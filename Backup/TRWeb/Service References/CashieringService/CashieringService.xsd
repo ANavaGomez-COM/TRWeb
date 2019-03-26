@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetParkingTicketList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objParkingTicketListRequest" nillable="true" type="tns:ParkingTicketListRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ParkingTicketListRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LicensePlate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicensePlateState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicensePlateType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParkingTicketListRequest" nillable="true" type="tns:ParkingTicketListRequest" />
+  <xs:element name="GetParkingTicketListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetParkingTicketListResult" nillable="true" type="tns:ArrayOfParkingTicketResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfParkingTicketResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParkingTicketResponse" nillable="true" type="tns:ParkingTicketResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParkingTicketResponse" nillable="true" type="tns:ArrayOfParkingTicketResponse" />
+  <xs:complexType name="ParkingTicketResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicensePlate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicensePlateState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicensePlateType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TicketNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViolationDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParkingTicketResponse" nillable="true" type="tns:ParkingTicketResponse" />
+  <xs:element name="GetTicketBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objPParkingTicketBalanceRequest" nillable="true" type="tns:ParkingTicketBalanceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ParkingTicketBalanceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+      <xs:element minOccurs="0" name="TicketNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParkingTicketBalanceRequest" nillable="true" type="tns:ParkingTicketBalanceRequest" />
+  <xs:element name="GetTicketBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTicketBalanceResult" nillable="true" type="tns:ParkingTicketResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplyTicketPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objParkingTicketApplyPayment" nillable="true" type="tns:ParkingTicketCreateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ParkingTicketCreateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatchID" type="xs:int" />
+      <xs:element minOccurs="0" name="LicensePlate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicensePlateState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicensePlateType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PaymentID" type="xs:int" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+      <xs:element minOccurs="0" name="TicketNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViolationDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParkingTicketCreateRequest" nillable="true" type="tns:ParkingTicketCreateRequest" />
+  <xs:element name="ApplyTicketPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplyTicketPaymentResult" nillable="true" type="tns:CreateDWRecordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CreateDWRecordResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UniqueID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateDWRecordResponse" nillable="true" type="tns:CreateDWRecordResponse" />
+  <xs:element name="VoidTicketPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objParkingTicketVoidPayment" nillable="true" type="tns:ParkingTicketCreateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VoidTicketPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VoidTicketPaymentResult" nillable="true" type="tns:CreateDWRecordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRealBalanceByParcelNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objGetRealPropertyByParcel" nillable="true" type="tns:RealPropertyByParcelRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RealPropertyByParcelRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ParcelNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RealPropertyByParcelRequest" nillable="true" type="tns:RealPropertyByParcelRequest" />
+  <xs:element name="GetRealBalanceByParcelNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRealBalanceByParcelNoResult" nillable="true" type="tns:RealPropertyTaxResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RealPropertyTaxResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstInstallment" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FirstInstallmentDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OwnerName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParcelNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondInstallment" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SecondInstallmentDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalTax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalTaxDue" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RealPropertyTaxResponse" nillable="true" type="tns:RealPropertyTaxResponse" />
+  <xs:element name="GetRealBalanceByAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objGetRealPropertyByAddress" nillable="true" type="tns:PropertyTaxAddressRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PropertyTaxAddressRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HouseNumber" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+      <xs:element minOccurs="0" name="StreetDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyTaxAddressRequest" nillable="true" type="tns:PropertyTaxAddressRequest" />
+  <xs:element name="GetRealBalanceByAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRealBalanceByAddressResult" nillable="true" type="tns:ArrayOfRealPropertyTaxResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfRealPropertyTaxResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RealPropertyTaxResponse" nillable="true" type="tns:RealPropertyTaxResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRealPropertyTaxResponse" nillable="true" type="tns:ArrayOfRealPropertyTaxResponse" />
+  <xs:element name="GetRealParcelByLastName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objGetRealPropertyByLastName" nillable="true" type="tns:RealPropertyByLastNameRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RealPropertyByLastNameRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RealPropertyByLastNameRequest" nillable="true" type="tns:RealPropertyByLastNameRequest" />
+  <xs:element name="GetRealParcelByLastNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRealParcelByLastNameResult" nillable="true" type="tns:ArrayOfRealPropertyTaxResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplyRealPropertyTaxPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objRealPropertyTaxApplyPayment" nillable="true" type="tns:PropertyTaxCreateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PropertyTaxCreateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatchID" type="xs:int" />
+      <xs:element minOccurs="0" name="ParcelNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PaymentID" type="xs:int" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyTaxCreateRequest" nillable="true" type="tns:PropertyTaxCreateRequest" />
+  <xs:element name="ApplyRealPropertyTaxPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplyRealPropertyTaxPaymentResult" nillable="true" type="tns:CreateDWRecordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VoidRealPropertyTaxPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objRealPropertyTaxVoidPayment" nillable="true" type="tns:PropertyTaxCreateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VoidRealPropertyTaxPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VoidRealPropertyTaxPaymentResult" nillable="true" type="tns:CreateDWRecordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalBalanceByAccountNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objGetPersonalPropertyByAccount" nillable="true" type="tns:PersonalPropertyByAccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PersonalPropertyByAccountRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalPropertyByAccountRequest" nillable="true" type="tns:PersonalPropertyByAccountRequest" />
+  <xs:element name="GetPersonalBalanceByAccountNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPersonalBalanceByAccountNoResult" nillable="true" type="tns:PersonalPropertyTaxResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PersonalPropertyTaxResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BalanceDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetNumber" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StreetType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zip1" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalPropertyTaxResponse" nillable="true" type="tns:PersonalPropertyTaxResponse" />
+  <xs:element name="GetPersonalBalanceByAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objGetPersonalPropertyByAddress" nillable="true" type="tns:PropertyTaxAddressRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalBalanceByAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPersonalBalanceByAddressResult" nillable="true" type="tns:ArrayOfPersonalPropertyTaxResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfPersonalPropertyTaxResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonalPropertyTaxResponse" nillable="true" type="tns:PersonalPropertyTaxResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonalPropertyTaxResponse" nillable="true" type="tns:ArrayOfPersonalPropertyTaxResponse" />
+  <xs:element name="GetPersonalBalanceByOwnerName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objGetPersonalPropertyByOwnerName" nillable="true" type="tns:PersonalPropertyByOwnerNameRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PersonalPropertyByOwnerNameRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalPropertyByOwnerNameRequest" nillable="true" type="tns:PersonalPropertyByOwnerNameRequest" />
+  <xs:element name="GetPersonalBalanceByOwnerNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPersonalBalanceByOwnerNameResult" nillable="true" type="tns:ArrayOfPersonalPropertyTaxResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplyPersonalPropertyTaxPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objPersonalPropertyTaxApplyPayment" nillable="true" type="tns:PersonalPropertyTaxCreateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PersonalPropertyTaxCreateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BatchID" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PaymentID" type="xs:int" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalPropertyTaxCreateRequest" nillable="true" type="tns:PersonalPropertyTaxCreateRequest" />
+  <xs:element name="ApplyPersonalPropertyTaxPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplyPersonalPropertyTaxPaymentResult" nillable="true" type="tns:CreateDWRecordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VoidPersonalPropertyTaxPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objPersonalPropertyTaxVoidPayment" nillable="true" type="tns:PersonalPropertyTaxCreateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VoidPersonalPropertyTaxPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VoidPersonalPropertyTaxPaymentResult" nillable="true" type="tns:CreateDWRecordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCDABalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objCDABalanceRequest" nillable="true" type="tns:CDABalanceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CDABalanceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+      <xs:element minOccurs="0" name="UnitID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDABalanceRequest" nillable="true" type="tns:CDABalanceRequest" />
+  <xs:element name="GetCDABalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCDABalanceResult" nillable="true" type="tns:ArrayOfCDABalanceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfCDABalanceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CDABalanceResponse" nillable="true" type="tns:CDABalanceResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCDABalanceResponse" nillable="true" type="tns:ArrayOfCDABalanceResponse" />
+  <xs:complexType name="CDABalanceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BalanceDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ClientID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDABalanceResponse" nillable="true" type="tns:CDABalanceResponse" />
+  <xs:element name="ApplyCDAPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objCDAApplyPayment" nillable="true" type="tns:CDACreateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CDACreateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatchID" type="xs:int" />
+      <xs:element minOccurs="0" name="ClientID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PaymentID" type="xs:int" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+      <xs:element minOccurs="0" name="UnitID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDACreateRequest" nillable="true" type="tns:CDACreateRequest" />
+  <xs:element name="ApplyCDAPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplyCDAPaymentResult" nillable="true" type="tns:CreateDWRecordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VoidCDAPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objCDAVoidPayment" nillable="true" type="tns:CDACreateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VoidCDAPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VoidCDAPaymentResult" nillable="true" type="tns:CreateDWRecordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWaterByCustomerAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objCDABalanceRequest" nillable="true" type="tns:WaterUtilityCustomerAccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="WaterUtilityCustomerAccountRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PortalId" type="xs:int" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WaterUtilityCustomerAccountRequest" nillable="true" type="tns:WaterUtilityCustomerAccountRequest" />
+  <xs:element name="GetWaterByCustomerAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetWaterByCustomerAccountResult" nillable="true" type="tns:WaterUtilityResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="WaterUtilityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArrangementAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ArrangementDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ArrangementStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="BalanceDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BillAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BillDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BillDueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CashOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisconnectDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DrawPayment" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IVRStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PastDueAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PaymentPlanType" type="xs:int" />
+      <xs:element minOccurs="0" name="PendingPaymentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PhoneDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseCode" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WaterUtilityResponse" nillable="true" type="tns:WaterUtilityResponse" />
+  <xs:element name="GetWaterByCustomerName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objCDAApplyPayment" nillable="true" type="tns:WaterUtilityCustomerNameRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="WaterUtilityCustomerNameRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PortalId" type="xs:int" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WaterUtilityCustomerNameRequest" nillable="true" type="tns:WaterUtilityCustomerNameRequest" />
+  <xs:element name="GetWaterByCustomerNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetWaterByCustomerNameResult" nillable="true" type="tns:ArrayOfWaterUtilityResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfWaterUtilityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WaterUtilityResponse" nillable="true" type="tns:WaterUtilityResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWaterUtilityResponse" nillable="true" type="tns:ArrayOfWaterUtilityResponse" />
+  <xs:element name="GetWaterByAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objCDAApplyPayment" nillable="true" type="tns:WaterUtilityAddressRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="WaterUtilityAddressRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PortalId" type="xs:int" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WaterUtilityAddressRequest" nillable="true" type="tns:WaterUtilityAddressRequest" />
+  <xs:element name="GetWaterByAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetWaterByAddressResult" nillable="true" type="tns:ArrayOfWaterUtilityResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplyWaterPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objCDAVoidPayment" nillable="true" type="tns:WaterUtilityCreateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="WaterUtilityCreateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BatchId" type="xs:long" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PaymentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WaterUtilityCreateRequest" nillable="true" type="tns:WaterUtilityCreateRequest" />
+  <xs:element name="ApplyWaterPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplyWaterPaymentResult" nillable="true" type="tns:CreateDWRecordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VoidWaterPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objCDAVoidPayment" nillable="true" type="tns:WaterUtilityCreateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VoidWaterPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VoidWaterPaymentResult" nillable="true" type="tns:CreateDWRecordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccelaInvoiceOrSetBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objAccelaBalanceRequest" nillable="true" type="tns:AccelaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AccelaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InvNumber" type="xs:double" />
+      <xs:element minOccurs="0" name="PaymentAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="SetId" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccelaRequest" nillable="true" type="tns:AccelaRequest" />
+  <xs:element name="GetAccelaInvoiceOrSetBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAccelaInvoiceOrSetBalanceResult" nillable="true" type="tns:AccelaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AccelaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccelaResponse" nillable="true" type="tns:AccelaResponse" />
+  <xs:element name="MakeAccelaPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objAccelaPaymentRequest" nillable="true" type="tns:AccelaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MakeAccelaPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MakeAccelaPaymentResult" nillable="true" type="tns:AccelaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewPortal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objNewPortalRequest" nillable="true" type="tns:NewPortalRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NewPortalRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdminKey" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MethodNames" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="OwnerEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewPortalRequest" nillable="true" type="tns:NewPortalRequest" />
+  <xs:element name="CreateNewPortalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateNewPortalResult" nillable="true" type="tns:PortalResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PortalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PortalId" type="xs:long" />
+      <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PortalResponse" nillable="true" type="tns:PortalResponse" />
+  <xs:element name="UpdatePortal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objUpdatePortalRequest" nillable="true" type="tns:UpdatePortalRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UpdatePortalRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AdminKey" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MethodNames" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="OwnerEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PortalID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdatePortalRequest" nillable="true" type="tns:UpdatePortalRequest" />
+  <xs:element name="UpdatePortalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePortalResult" nillable="true" type="tns:UpdateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UpdateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MethodNames" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="OwnerEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PortalId" type="xs:long" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateResponse" nillable="true" type="tns:UpdateResponse" />
+  <xs:element name="RequestNewKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objNewKeyRequest" nillable="true" type="tns:NewKeyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NewKeyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdminKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PortalId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewKeyRequest" nillable="true" type="tns:NewKeyRequest" />
+  <xs:element name="RequestNewKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RequestNewKeyResult" nillable="true" type="tns:PortalResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
