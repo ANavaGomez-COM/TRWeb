@@ -1,1 +1,6 @@
 web.config
+TRWeb/bin/Microsoft.SqlServer.DTSPipelineWrap.dll
+TRWeb/bin/Microsoft.SqlServer.PipelineHost.dll
+TRWeb/obj/Release/Package/PackageTmp/bin/Microsoft.SqlServer.DTSPipelineWrap.dll
+TRWeb/obj/Release/Package/PackageTmp/bin/Microsoft.SQLServer.ManagedDTS.dll
+TRWeb/obj/Release/Package/PackageTmp/bin/Microsoft.SqlServer.PipelineHost.dll
