@@ -4241,8 +4241,8 @@ namespace TRWeb.CashieringService {
             return base.Channel.GetParkingTicketList(objParkingTicketListRequest);
         }
         
-        public TRWeb.CashieringService.ParkingTicketResponse GetTicketBalance(TRWeb.CashieringService.ParkingTicketBalanceRequest objPParkingTicketBalanceRequest) {
-            return base.Channel.GetTicketBalance(objPParkingTicketBalanceRequest);
+        public TRWeb.CashieringService.ParkingTicketResponse GetTicketBalance(TRWeb.CashieringService.ParkingTicketBalanceRequest objParkingTicketBalanceRequest) {
+            return base.Channel.GetTicketBalance(objParkingTicketBalanceRequest);
         }
         
         public TRWeb.CashieringService.CreateDWRecordResponse ApplyTicketPayment(TRWeb.CashieringService.ParkingTicketCreateRequest objParkingTicketApplyPayment) {

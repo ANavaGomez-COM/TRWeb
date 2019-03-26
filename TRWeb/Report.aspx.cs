@@ -75,8 +75,8 @@ namespace TRWeb
 
             ddlReportName.Items.Add("Process Summary");
             ddlReportName.Items.Add("Monthly Report for US Bank");
-            ddlReportName.Items.Add("Web Summary by Type, Date");
-			
+            ddlReportName.Items.Add("Web Summary by Type, Date");            
+
             // KG Added new reporting for IT 1/4/2017
             if (userInfo.Count > 0)
             {
@@ -86,10 +86,10 @@ namespace TRWeb
                 {
                     ddlReportName.Items.Add("Import Summary");
                     ddlReportName.Items.Add("Export Summary");
-                    ddlReportName.Items.Add("Deposit Worksheet");                       //Added by ITJBS, 7/24/2017.
-                    ddlReportName.Items.Add("Transactions by Date");                    //Added by ITKG, 01/24/2018
-                    ddlReportName.Items.Add("Online Payment Detail");                   //Added by ITALN, 01/08/2019
-                    ddlReportName.Items.Add("Missing Online Parking Ticket Numbers");   //Added by ITJBS, 1/9/2019 (SR-19-0004)
+                    ddlReportName.Items.Add("Deposit Worksheet");               //Added by ITJBS, 7/24/2017.
+                    ddlReportName.Items.Add("Transactions by Date");            //Added by ITKG, 01/24/2018
+                    ddlReportName.Items.Add("Online Payment Detail");           //Added by ITALN, 01/08/2019
+                    ddlReportName.Items.Add("Missing Online Parking Ticket Numbers");       //Added by ITJBS, 1/9/2019 (SR-19-0004)
                 }
                 else if (a.UserGroup == "Treasurer")                            //Separated Treasurer from Water, CDA, Police - ITJBS 7/24/2017
                 {
@@ -105,7 +105,7 @@ namespace TRWeb
                     ddlReportName.Items.Add("Missing Online Parking Ticket Numbers");       //Added by ITJBS, 1/9/2019 (SR-19-0004)
 
                 }
-                else if ((a.UserGroup == "Water") || (a.UserGroup == "CDA") || (a.UserGroup == "Court"))	//Jane S, 2019-01-24: Added Court for TiPSS project, SR-17-0375.
+                else if ((a.UserGroup == "Water") || (a.UserGroup == "CDA") || (a.UserGroup == "Court"))  //Jane S, 2-20-2018 - Added Court for TiPSS project, SR-17-0375.
                 {
                     ddlReportName.Items.Add("Export Summary");
                 }
@@ -171,7 +171,7 @@ namespace TRWeb
                     // reportPath = "/ERP Middleware/ERPReports/TRWebSummary";
                     reportName = reportPath + "DepositWorksheet";                   //Report previously called OnlineProcessSummary - ITJBS 8/2/2017
                 }
-                else if (ddlReportName.SelectedValue == "Transactions by Date")        //Added by ITKG, 1/24/2018.
+                else if (ddlReportName.SelectedValue == "Transactions by Date")     //Added by ITKG, 1/24/2018.
                 {
                     // reportPath = "/ERP Middleware/ERPReports/TRWebSummary";
                     reportName = reportPath + "TransactionsByDate";
@@ -182,8 +182,8 @@ namespace TRWeb
                     reportName = reportPath + "OnlinePaymentDetail";
                 }
                 else if (ddlReportName.SelectedValue == "Missing Online Parking Ticket Numbers")     //Added by ITJBS, 1/9/2019 (SR-19-0004).
-                {
-                    reportName = reportPath + "MissingOnlineParkingTicketNumbers";
+                { 
+                        reportName = reportPath + "MissingOnlineParkingTicketNumbers";
                 }
                 else
                 {
@@ -210,14 +210,14 @@ namespace TRWeb
 
             try
             {
-            //Jane S, 2017-09-19: Changed MiscHeader line to get specific SourceType instead of just MSCCOM.
-			//Jane S, 2019-01-24: Added line for CourtHeader - TiPSS project, SR-17-0375.
+                //Jane S, 2017-09-19: Changed MiscHeader line to get specific SourceType instead of just MSCCOM.
+                //Jane S, 2018-02-20: Added line for CourtHeader - TiPSS project, SR-17-0375.
                 sqlStr = "SELECT * FROM (" +
                                   "SELECT DISTINCT BatchID, cast(ImportReportSentDate as date) ReportDate, CreatedDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM CDAHeader LEFT OUTER JOIN SourceType ST on CDAHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' " +
                         //"UNION ALL SELECT DISTINCT BatchID, cast(ImportReportSentDate as date) ReportDate, CreatedDate, ST.SourceType + ' - ' + ST.SourceTypeDescription + '<br>' + Type as SourceTypeDescription FROM MiscHeader LEFT OUTER JOIN SourceType ST on MiscHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' " +
                         "UNION ALL SELECT DISTINCT BatchID, cast(ImportReportSentDate as date) ReportDate, CreatedDate, ISNULL((select ST.SourceType from SourceType ST where ST.BillerProductCode = MiscHeader.Type), ST.SourceType) + ' - ' + ST.SourceTypeDescription + '<br>' + Type as SourceTypeDescription FROM MiscHeader LEFT OUTER JOIN SourceType ST on MiscHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' " +
                         "UNION ALL SELECT DISTINCT BatchID, cast(ImportReportSentDate as date) ReportDate, CreatedDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM ParkingHeader LEFT OUTER JOIN SourceType ST on ParkingHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' " +
-                        "UNION ALL SELECT DISTINCT BatchID, cast(ImportReportSentDate as date) ReportDate, CreatedDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM CourtHeader LEFT OUTER JOIN SourceType ST on CourtHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' " +						
+                        "UNION ALL SELECT DISTINCT BatchID, cast(ImportReportSentDate as date) ReportDate, CreatedDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM CourtHeader LEFT OUTER JOIN SourceType ST on CourtHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' " +
                         "UNION ALL SELECT DISTINCT BatchID, cast(ImportReportSentDate as date) ReportDate, CreatedDate, ST.SourceType + ' - ' + ST.SourceTypeDescription + '<br>' + Type as SourceTypeDescription FROM PropertyTaxHeader LEFT OUTER JOIN SourceType ST on PropertyTaxHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' " +
                         "UNION ALL SELECT DISTINCT BatchID, cast(ImportReportSentDate as date) ReportDate, CreatedDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM WaterHeader LEFT OUTER JOIN SourceType ST on WaterHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' " +
                         ") as rs ORDER BY CreatedDate Desc";
@@ -257,13 +257,13 @@ namespace TRWeb
                 switch (a.UserGroup)
                 {
                     case "IT":
-						//Jane S, 2019-01-24: Added line to query for CourtHeader - TiPSS project, SR-17-0375.
+                        //Jane S, 2018-02-20: Added line to query for CourtHeader - TiPSS project, SR-17-0375.
                         {
                             sqlStr = "SELECT * FROM (" +
                                                "SELECT DISTINCT ExportedBatchID BatchID, cast(ExportReportSentDate as date) ReportDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM CDAHeader LEFT OUTER JOIN SourceType ST on CDAHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' AND ExportedBatchID IS NOT NULL " +
                                      "UNION ALL SELECT DISTINCT ExportedBatchID BatchID, cast(ExportReportSentDate as date) ReportDate, ST.SourceType + ' - ' + ST.SourceTypeDescription + '<br>' + Type as SourceTypeDescription FROM MiscHeader LEFT OUTER JOIN SourceType ST on MiscHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' AND ExportedBatchID IS NOT NULL " +
                                      "UNION ALL SELECT DISTINCT ExportedBatchID BatchID, cast(ExportReportSentDate as date) ReportDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM ParkingHeader LEFT OUTER JOIN SourceType ST on ParkingHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' AND ExportedBatchID IS NOT NULL " +
-									 "UNION ALL SELECT DISTINCT ExportedBatchID BatchID, cast(ExportReportSentDate as date) ReportDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM CourtHeader LEFT OUTER JOIN SourceType ST on CourtHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' AND ExportedBatchID IS NOT NULL " +
+                                     "UNION ALL SELECT DISTINCT ExportedBatchID BatchID, cast(ExportReportSentDate as date) ReportDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM CourtHeader LEFT OUTER JOIN SourceType ST on CourtHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' AND ExportedBatchID IS NOT NULL " +
                                      "UNION ALL SELECT DISTINCT ExportedBatchID BatchID, cast(ExportReportSentDate as date) ReportDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM PropertyTaxHeader LEFT OUTER JOIN SourceType ST on PropertyTaxHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' AND ExportedBatchID IS NOT NULL " +
                                      "UNION ALL SELECT DISTINCT ExportedBatchID BatchID, cast(ExportReportSentDate as date) ReportDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM WaterHeader LEFT OUTER JOIN SourceType ST on WaterHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' AND ExportedBatchID IS NOT NULL " +
                                      ") as rs ";
@@ -289,12 +289,12 @@ namespace TRWeb
                             sqlStr = "SELECT * FROM (SELECT DISTINCT ExportedBatchID BatchID, cast(ExportReportSentDate as date) ReportDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM ParkingHeader LEFT OUTER JOIN SourceType ST on ParkingHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' AND ExportedBatchID IS NOT NULL) as rs ";
                             break;
                         }
-                    //Jane S, 2019-01-24: Added new case for Court - TiPSS project, SR-17-0375.
+                    //Jane S, 2018-02-20: Added new case for Court - TiPSS project, SR-17-0375.
                     case "Court":
                         {
                             sqlStr = "SELECT * FROM (SELECT DISTINCT ExportedBatchID BatchID, cast(ExportReportSentDate as date) ReportDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM CourtHeader LEFT OUTER JOIN SourceType ST on CourtHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' AND ExportedBatchID IS NOT NULL) as rs ";
                             break;
-                        }						
+                        }
                 }
                 reportDT = new DataTable();
                 reportDT = biz.getData(sqlStr);

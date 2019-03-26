@@ -24,7 +24,6 @@ namespace TRWeb
 
         private BizData biz = new BizData();
         private string packagePath = "";
-        private string errorMessage = "";
         static string gridType = "";
 
         private GridViewRow grdViewRow;
@@ -53,10 +52,6 @@ namespace TRWeb
                         }
                     }
                 }
-            }
-            else
-            {
-                errorMessage = "The environment variables were not found.";
             }
         }
 
@@ -616,7 +611,9 @@ namespace TRWeb
         {
             Application app = new Application();
             Package package = null;
-            string password = "OFu=m?ujriK[";
+            var reader = new AppSettingsReader();
+            //string password = "OFu=m?ujriK[";
+            string password = (reader.GetValue("ssisPwd", typeof(string))).ToString();
             string resultText = "";
 
             try
@@ -662,7 +659,7 @@ namespace TRWeb
                 btnShowHide.Text = "Hide Detail";
                 txtWebConfigDet.Visible = true;
             }
-        }
+       }
 
         //Refresh text box showing quick reference showing various configurations for administrative staff (SR-18-0000277)--itjas, 10/10/2018
         protected void UpdateEnvironmentContext()
@@ -1020,7 +1017,7 @@ namespace TRWeb
                     if (vSubnode.IndexOf(pSubString) > -1) //a sub-node of ConfiguredValue that we're interested in
                     {
                         pToolTip += "\n\t" + vSubnode;
-                        if (!vSubnode.ToUpper().EndsWith(pEnv.ToUpper()))
+                        if (! vSubnode.ToUpper().EndsWith(pEnv.ToUpper()))
                         {
                             pToolTip += " " + ERR_MISMATCH;
                             pForeColor = System.Drawing.Color.Red;

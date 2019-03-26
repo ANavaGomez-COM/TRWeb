@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CashieringServices.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://erpbiztalktest.cityofmadison.com:90/CashieringService/CashieringService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="GetParkingTicketList">
     <xs:complexType>
       <xs:sequence>
@@ -145,15 +145,15 @@
       <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FirstInstallment" type="xs:decimal" />
-      <xs:element minOccurs="0" name="FirstInstallmentDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FourthInstallment" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FullAmount" type="xs:decimal" />
       <xs:element minOccurs="0" name="OwnerName1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OwnerName2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ParcelNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SecondInstallment" type="xs:decimal" />
-      <xs:element minOccurs="0" name="SecondInstallmentDue" type="xs:decimal" />
       <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TotalTax" type="xs:decimal" />
-      <xs:element minOccurs="0" name="TotalTaxDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaxYear" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThirdInstallment" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RealPropertyTaxResponse" nillable="true" type="tns:RealPropertyTaxResponse" />

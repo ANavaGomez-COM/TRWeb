@@ -10,22 +10,12 @@ C:\TRWeb\TRWeb\bin\Microsoft.SqlServer.DTSRuntimeWrap.dll
 C:\TRWeb\TRWeb\obj\Debug\TRWeb.dll
 C:\TRWeb\TRWeb\obj\Debug\TRWeb.pdb
 C:\TRWeb\TRWeb\obj\Debug\TRWeb.csprojResolveAssemblyReference.cache
+F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\bin\TRWeb.dll.config
 F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\bin\TRWeb.dll
 F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\bin\TRWeb.pdb
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\obj\Debug\TRWeb.csprojResolveAssemblyReference.cache
+F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\bin\Microsoft.ReportViewer.WebForms.dll
+F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\bin\Microsoft.ReportViewer.Common.dll
+F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\bin\Microsoft.ReportViewer.WebForms.xml
 F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\obj\Debug\TRWeb.dll
 F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\obj\Debug\TRWeb.pdb
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\bin\Microsoft.SqlServer.DTSRuntimeWrap.dll
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Test\TRWeb\TRWeb\bin\TRWeb.dll
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Test\TRWeb\TRWeb\bin\TRWeb.pdb
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Test\TRWeb\TRWeb\obj\Debug\TRWeb.dll
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Test\TRWeb\TRWeb\obj\Debug\TRWeb.pdb
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Production\TRWeb\TRWeb\bin\TRWeb.dll.config
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Production\TRWeb\TRWeb\bin\TRWeb.dll
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Production\TRWeb\TRWeb\bin\TRWeb.pdb
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Production\TRWeb\TRWeb\bin\Microsoft.ReportViewer.WebForms.dll
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Production\TRWeb\TRWeb\bin\Microsoft.ReportViewer.Common.dll
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Production\TRWeb\TRWeb\bin\Microsoft.ReportViewer.WebForms.xml
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Production\TRWeb\TRWeb\obj\Debug\TRWeb.dll
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Production\TRWeb\TRWeb\obj\Debug\TRWeb.pdb
-F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Production\TRWeb\TRWeb\obj\Debug\TRWeb.csprojResolveAssemblyReference.cache
+F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Development\TRWeb\TRWeb\obj\Debug\TRWeb.csprojResolveAssemblyReference.cache

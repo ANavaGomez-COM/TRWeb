@@ -5,21 +5,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <TimeStampOfAssociatedLegacyPublishXmlFile>2016-04-07T10:10:50.0000000-05:00</TimeStampOfAssociatedLegacyPublishXmlFile>
-    <_PublishTargetUrl>\\erpbiztalk\inetpub\wwwroot\TRWeb</_PublishTargetUrl>
+    <TimeStampOfAssociatedLegacyPublishXmlFile>2016-07-15T15:00:42.8782772-05:00</TimeStampOfAssociatedLegacyPublishXmlFile>
+    <_PublishTargetUrl>\\erpbiztalktest\inetpub\DevCashiering\TRWeb</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Administration.aspx">
-      <publishTime>02/11/2019 10:31:18</publishTime>
+      <publishTime>10/18/2018 09:13:17</publishTime>
     </File>
     <File Include="AdminNotify.aspx">
-      <publishTime>09/16/2015 11:16:50</publishTime>
+      <publishTime>09/16/2015 11:16:48</publishTime>
     </File>
     <File Include="AdminUser.aspx">
-      <publishTime>09/15/2015 10:52:50</publishTime>
+      <publishTime>09/15/2015 10:52:48</publishTime>
     </File>
     <File Include="AuthAdd.aspx">
-      <publishTime>12/02/2014 09:57:42</publishTime>
+      <publishTime>09/15/2015 10:54:18</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.Common.dll">
       <publishTime>06/28/2011 01:35:08</publishTime>
@@ -37,91 +37,103 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/21/2014 04:26:54</publishTime>
     </File>
     <File Include="bin/TRWeb.dll">
-      <publishTime>02/11/2019 11:31:30</publishTime>
+      <publishTime>03/20/2019 14:16:56</publishTime>
     </File>
     <File Include="bin/TRWeb.XmlSerializers.dll">
-      <publishTime>02/11/2019 11:31:30</publishTime>
+      <publishTime>03/20/2019 14:16:57</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>10/10/2017 15:47:16</publishTime>
+      <publishTime>10/10/2017 15:47:15</publishTime>
+    </File>
+    <File Include="DefaultTest.aspx">
+      <publishTime>05/06/2016 10:45:15</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>08/13/2014 08:46:46</publishTime>
+      <publishTime>08/13/2014 08:46:44</publishTime>
     </File>
     <File Include="Housing.aspx">
-      <publishTime>12/03/2014 11:00:54</publishTime>
+      <publishTime>12/03/2014 11:00:53</publishTime>
+    </File>
+    <File Include="Images/loader.gif">
+      <publishTime>11/13/2017 13:41:01</publishTime>
     </File>
     <File Include="NotifAdd.aspx">
-      <publishTime>09/13/2018 09:25:25</publishTime>
+      <publishTime>08/30/2018 08:27:42</publishTime>
     </File>
     <File Include="Portal.aspx">
-      <publishTime>11/19/2014 11:24:44</publishTime>
+      <publishTime>11/19/2014 11:24:42</publishTime>
     </File>
     <File Include="PropertyTax.aspx">
-      <publishTime>12/03/2014 11:28:08</publishTime>
+      <publishTime>12/03/2014 11:28:06</publishTime>
     </File>
     <File Include="Report.aspx">
-      <publishTime>04/28/2017 15:53:24</publishTime>
+      <publishTime>04/28/2017 15:42:06</publishTime>
     </File>
     <File Include="Scripts/jquery-1.4.1-vsdoc.js">
-      <publishTime>08/13/2014 08:46:46</publishTime>
+      <publishTime>08/13/2014 08:46:44</publishTime>
     </File>
     <File Include="Scripts/jquery-1.4.1.js">
-      <publishTime>08/13/2014 08:46:46</publishTime>
+      <publishTime>08/13/2014 08:46:44</publishTime>
     </File>
     <File Include="Scripts/jquery-1.4.1.min.js">
-      <publishTime>08/13/2014 08:46:46</publishTime>
+      <publishTime>08/13/2014 08:46:44</publishTime>
     </File>
     <File Include="Service References/CashieringService/TRWeb.CashieringService.AccelaResponse.datasource">
-      <publishTime>12/27/2016 11:21:30</publishTime>
+      <publishTime>01/04/2018 15:49:09</publishTime>
     </File>
     <File Include="Service References/CashieringService/TRWeb.CashieringService.CDABalanceResponse.datasource">
-      <publishTime>12/27/2016 11:21:30</publishTime>
+      <publishTime>01/04/2018 15:49:09</publishTime>
     </File>
     <File Include="Service References/CashieringService/TRWeb.CashieringService.CreateDWRecordResponse.datasource">
-      <publishTime>12/27/2016 11:21:30</publishTime>
+      <publishTime>01/04/2018 15:49:09</publishTime>
     </File>
     <File Include="Service References/CashieringService/TRWeb.CashieringService.ParkingTicketResponse.datasource">
-      <publishTime>12/27/2016 11:21:30</publishTime>
+      <publishTime>01/04/2018 15:49:08</publishTime>
     </File>
     <File Include="Service References/CashieringService/TRWeb.CashieringService.PersonalPropertyTaxResponse.datasource">
-      <publishTime>12/27/2016 11:21:30</publishTime>
+      <publishTime>01/04/2018 15:49:09</publishTime>
     </File>
     <File Include="Service References/CashieringService/TRWeb.CashieringService.PortalResponse.datasource">
-      <publishTime>12/27/2016 11:21:30</publishTime>
+      <publishTime>01/04/2018 15:49:09</publishTime>
     </File>
     <File Include="Service References/CashieringService/TRWeb.CashieringService.RealPropertyTaxResponse.datasource">
-      <publishTime>12/27/2016 11:21:30</publishTime>
+      <publishTime>01/04/2018 15:49:09</publishTime>
     </File>
     <File Include="Service References/CashieringService/TRWeb.CashieringService.UpdateResponse.datasource">
-      <publishTime>12/27/2016 11:21:30</publishTime>
+      <publishTime>01/04/2018 15:49:09</publishTime>
     </File>
     <File Include="Service References/CashieringService/TRWeb.CashieringService.WaterUtilityResponse.datasource">
-      <publishTime>12/27/2016 11:21:30</publishTime>
+      <publishTime>01/04/2018 15:49:09</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>09/13/2018 09:24:24</publishTime>
+      <publishTime>09/12/2018 12:00:10</publishTime>
     </File>
     <File Include="SourceAdd.aspx">
-      <publishTime>12/02/2014 08:18:50</publishTime>
+      <publishTime>12/02/2014 08:18:49</publishTime>
+    </File>
+    <File Include="SSRSTest.asmx">
+      <publishTime>03/01/2017 15:26:40</publishTime>
     </File>
     <File Include="Styles/Site.css">
-      <publishTime>09/09/2015 16:50:16</publishTime>
+      <publishTime>10/16/2018 11:41:13</publishTime>
     </File>
     <File Include="Ticket.aspx">
-      <publishTime>12/03/2014 10:38:56</publishTime>
+      <publishTime>12/03/2014 10:38:55</publishTime>
     </File>
     <File Include="UserError.aspx">
-      <publishTime>11/19/2014 09:14:34</publishTime>
+      <publishTime>11/19/2014 09:14:32</publishTime>
     </File>
     <File Include="WaterAdmin.aspx">
-      <publishTime>01/10/2018 08:05:46</publishTime>
+      <publishTime>01/10/2018 08:05:44</publishTime>
     </File>
     <File Include="WaterBill.aspx">
-      <publishTime>12/03/2014 11:21:42</publishTime>
+      <publishTime>12/03/2014 11:21:40</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/11/2019 10:41:07</publishTime>
+      <publishTime>03/20/2019 14:01:29</publishTime>
+    </File>
+    <File Include="wsGetDocument.asmx">
+      <publishTime>03/08/2016 16:46:33</publishTime>
     </File>
   </ItemGroup>
 </Project>

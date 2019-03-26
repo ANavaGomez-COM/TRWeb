@@ -31,7 +31,7 @@ p
 {
     margin-bottom: 10px;
     line-height: 1.6em;
-    height: 30px;
+    height: 13px;
 }
 
 
@@ -93,7 +93,7 @@ first child of the left and right table columns */
     background-color: #fff;
     margin: 20px auto 0px auto;
     border: 1px solid #496077;
-    height:1200px;
+    height:1400px;
 }
 
 .header
@@ -207,19 +207,23 @@ div.menu ul li a:active
 
 .case
 {
+    border-left: 0 dashed #333;
+    border-right: 0 dashed #333;
+    border-top: 0 dashed #333;
+    border-bottom: 2px dashed #333;
     width:100%;
-    height:160px;
-    border:dashed #333;
-    border-width: 0 0 2px 0;
-}
+    height:208px;
+    }
 
 .caseBottom
 {
+    border-left: 0 dashed #333;
+    border-right: 0 dashed #333;
+    border-top: 0 dashed #333;
+    border-bottom: 2px dashed #333;
     width:100%;
-    height:235px;
-    border:dashed #333;
-    border-width: 0 0 2px 0;
-}
+    height:300px;
+    }
 
 .floater
 {

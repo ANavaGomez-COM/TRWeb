@@ -40,23 +40,12 @@ namespace TRWeb
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            //itjas, 9/13/2018: old code superseded by code to update emails using free-text (SR-18-0000250)
-            //notif = new Notification();
-            //Boolean valid = true;
-            //lblNotifEmailError.Text = "";
-
             //if (lstNotifEmailList.SelectedIndex < 0)
             //{
             //    lblNotifEmailError.Text = "You must select a valid notification email.";
             //    valid = false;
             //}
 
-            //if (valid)
-            //{
-            //    notif.insertNotificationInformation(cmbSourceList.SelectedItem.ToString().Substring(0, 6), lstNotifEmailList.SelectedValue, chkReceiveOnline.Checked
-            //        , chkReceiveRemittance.Checked, chkActiveNotif.Checked);
-            //    Response.Redirect(ViewState["PreviousPage"].ToString());    // Returns to calling page
-            //}
             if (string.IsNullOrWhiteSpace(txtNotifEmail.Text))
             {
                 lblNotifEmailError.Text = "You must enter a valid notification email.";
@@ -69,6 +58,9 @@ namespace TRWeb
             {
                 notif = new Notification();
 
+                //notif.insertNotificationInformation(cmbSourceList.SelectedItem.ToString().Substring(0, 6), lstNotifEmailList.SelectedValue, chkReceiveOnline.Checked
+                //    , chkReceiveRemittance.Checked, chkActiveNotif.Checked);
+                //Response.Redirect("~/Administration.aspx");
                 //save return value--itjas, 8/28/2018
                 string result = notif.insertNotificationInformation(cmbSourceList.SelectedItem.ToString().Substring(0, 6), txtNotifEmail.Text, chkReceiveOnline.Checked
                     , chkReceiveRemittance.Checked, chkActiveNotif.Checked);

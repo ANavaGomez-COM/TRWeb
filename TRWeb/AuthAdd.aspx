@@ -45,5 +45,6 @@
         <br />
         <br />
         <asp:Button ID="btnAdd" runat="server" Text="Add User" onclick="btnAdd_Click" />
+        <asp:Button ID="btnCancel" runat="server" Text="Cancel" onclick="btnCancel_Click" />
     </div>
 </asp:Content>

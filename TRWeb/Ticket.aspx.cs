@@ -186,6 +186,7 @@ namespace TRWeb
         {
             string str = "";
             grdViewRow = grdResult.SelectedRow;
+            //had been commented out--now restoring to fix problem w/ Tyler cashiering not working with Cashiering Services--itjas, 11/7/2018
             string vDate = "";
             if (grdViewRow.Cells[5].Text.Trim() == "")
             {
@@ -199,6 +200,7 @@ namespace TRWeb
                 string day = vDate.Substring(6, 2);
                 vDate = month + "/" + day + "/" + year;
             }
+            //string vDate = grdViewRow.Cells[5].Text.Trim(); //AIMS system is returning a properly formatted string--itjas, 10/19/2018
             str = str + "Selected Record:\r\n\r\n";
             str = str + "Ticket Number: " + grdViewRow.Cells[1].Text.Trim() + "\r\n";
             str = str + "License Plate Number: " + grdViewRow.Cells[2].Text.Trim() + "\r\n";

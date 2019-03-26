@@ -169,12 +169,25 @@ namespace TRWeb
                 // italn 20180905 - see comment in change log above.
                 PTicketBalResp = wServicePTicket.GetTicketBalance(PTicketBalReq);
                 sb = sb + PTicketBalResp.Status.ToString().ToLower() + ".\r\n\r\n";
-                pt.TicketNumber = PTicketBalResp.TicketNumber;
-                pt.LicensePlate = PTicketBalResp.LicensePlate;
-                pt.LicensePlateState = PTicketBalResp.LicensePlateState;
-                pt.LicensePlateType = PTicketBalResp.LicensePlateType;
-                pt.ViolationDate = PTicketBalResp.ViolationDate;
-                pt.BalanceDue = string.Format("{0:C}", PTicketBalResp.BalanceDue);
+                // pt.TicketNumber = PTicketBalResp.TicketNumber;
+                // pt.LicensePlate = PTicketBalResp.LicensePlate;
+                // pt.LicensePlateState = PTicketBalResp.LicensePlateState;
+                // pt.LicensePlateType = PTicketBalResp.LicensePlateType;
+                // pt.ViolationDate = PTicketBalResp.ViolationDate;
+                // pt.BalanceDue = string.Format("{0:C}", PTicketBalResp.BalanceDue);
+                if (PTicketBalResp.Status == "Success")		//added to display error messages when ticket balance fails--itjas 3/20/2019
+                {
+                    pt.TicketNumber = PTicketBalResp.TicketNumber;
+                    pt.LicensePlate = PTicketBalResp.LicensePlate;
+                    pt.LicensePlateState = PTicketBalResp.LicensePlateState;
+                    pt.LicensePlateType = PTicketBalResp.LicensePlateType;
+                    pt.ViolationDate = PTicketBalResp.ViolationDate;
+                    pt.BalanceDue = string.Format("{0:C}", PTicketBalResp.BalanceDue);
+                }
+                else
+                {
+                    sb = sb + "Error: " + PTicketBalResp.ErrorMessage.ToString() + "\r\n";
+                }
                 result.Add(pt);
             }
             else if (type == "Ticket List")

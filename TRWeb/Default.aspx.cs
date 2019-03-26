@@ -18,10 +18,12 @@ using System.Diagnostics;
 using System.Configuration;
 using System.Threading;
 
-/* 	Riki 1-29-15 RIKI#2 It needs to run a external program the OCR like how it runs the e-payment script 
-	ITJBS = Jane S = Jane Schneider
-	ITKG = kg = Kim G = Kim Grittner
-	ITJBS 2019-01-24: Added TiPSS code (SR-17-0375).
+/* change log:
+  
+    Riki 1-29-15 RIKI#2 It needs to run a external program the OCR like how it runs the e-payment script 
+    italn 20180905 Added an extra check of userName since the HttpContext.Current.User.Identity.Name; returns blank when running the application locally in VS2015, and using IIS Express.
+    ITJBS = Jane S = Jane Schneider
+    ITKG = kg = Kim G = Kim Grittner
 */
 
 namespace TRWeb
@@ -34,7 +36,6 @@ namespace TRWeb
 
         private string groupSelectedValue = "";
         private string functionSelectedValue = "";
-        private string errorMessage = "";
         private string packagePath = "";
         private string importFilePath = "";
         private string ePayDestPath = "";
@@ -58,7 +59,15 @@ namespace TRWeb
         {
             ArrayList userInfo = new ArrayList();
             userName = a.formatUserName();
+
+            // italn 20180905 - see comment in change log section above.
+            if (userName.Length == 0)
+            {
+                userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\').Last();
+            }
+
             userInfo = a.getActiveUserByUserID(userName);
+
             Session["User"] = userInfo;
             if (userInfo.Count > 0)
             {
@@ -77,7 +86,7 @@ namespace TRWeb
                     cmbGroup.Items.Add("Water");
                     cmbGroup.Items.Add("Parking");
                     cmbGroup.Items.Add("Water Admin");
-					cmbGroup.Items.Add("Court");        //Jane S, 2019-01-24: Added for TiPSS project, SR-17-0375.
+                    cmbGroup.Items.Add("Court");        //Jane S, 2018-01-26: Added for TiPSS project, SR-17-0375.
                 }
                 else if (a.UserGroup == "Water Admin")
                 {
@@ -114,9 +123,9 @@ namespace TRWeb
                     cmbGroup.Items.Add("Parking");
                     cmbGroup.Enabled = false;
                 }
-				else if (a.UserGroup == "Court")        //Jane S, 2019-01-24: Added for TiPSS project, SR-17-0375.
+                else if (a.UserGroup == "Court")
                 {
-                    cmbGroup.Items.Add("Court");      
+                    cmbGroup.Items.Add("Court");      //Jane S, 2018-01-26: Added for TiPSS project, SR-17-0375.
                     cmbGroup.Enabled = false;
                 }
                 else
@@ -198,10 +207,6 @@ namespace TRWeb
                     }
                 }
             }
-            else
-            {
-                errorMessage = "The environment variables were not found.";
-            }
 
             if (IsPostBack == false)
             {
@@ -247,7 +252,7 @@ namespace TRWeb
             {
                 cmbFunction.Items.Add("Water Administration");
             }
-            else if (groupSelectedValue.Equals("Court"))                //Jane S, 2019-01-24: Added for TiPSS project, SR-17-0375.
+            else if (groupSelectedValue.Equals("Court"))                //Jane S, 2018-01-26: Added for TiPSS project, SR-17-0375.
             {
                 cmbFunction.Items.Add("Create Municipal Court File");
             }
@@ -280,7 +285,7 @@ namespace TRWeb
                 // kg added 12/4/2015 - read files from sftp site
                 var reader = new AppSettingsReader();
                 var batFileKUBRA = (reader.GetValue("KUBRABatFile", typeof(string))).ToString();
-                if (File.Exists(batFileKUBRA))
+                if (File.Exists(batFileKUBRA)) // Riki 11/12/2018 reference 2
                 {
                     System.Diagnostics.Process proc = new System.Diagnostics.Process();
 
@@ -327,7 +332,7 @@ namespace TRWeb
                 setScreen();
                 btnProcess.Visible = true;
             }
-            else if (functionSelectedValue.Equals("Create Municipal Court File"))       //Jane S, 2019-01-24: Added for TiPSS, SR-17-0375
+            else if (functionSelectedValue.Equals("Create Municipal Court File"))       //Jane S, 2018-01-31: Added for TiPSS, SR-17-0375
             {
                 resetPage();
                 btnProcess.Visible = true;
@@ -398,7 +403,7 @@ namespace TRWeb
                         {
                             foreach (DataRow row in configDT.Rows)
                             {
-                                if(row["Status"].ToString() == "Valid")
+                                if (row["Status"].ToString() == "Valid")
                                 {
                                     resultText = "Validation results: Valid" + Environment.NewLine + "Press the 'Process' button to proceed.";
                                 }
@@ -605,8 +610,8 @@ namespace TRWeb
         {
             string runType = "";
             //string batFile = "C:\\DevERPDataExports\\runEpaymentProgram.bat";
-            //var reader = new AppSettingsReader();                                         //Jane, 2018-12-17: moved to runEPaymentProcess() for AIMS project.
-            //var batFile = (reader.GetValue("batFile", typeof(string))).ToString();        //Jane, 2018-12-17: moved to runEPaymentProcess() for AIMS project.
+            //var reader = new AppSettingsReader();                                     //Jane, 2018-11-14: moved to runEPaymentProcess()
+            //var batFile = (reader.GetValue("batFile", typeof(string))).ToString();    //Jane, 2018-11-14: moved to runEPaymentProcess()
 
             if (functionSelectedValue == "Update Posted Date in OCR")
             {
@@ -655,7 +660,7 @@ namespace TRWeb
             {
                 processUpload(functionSelectedValue);
             }
-            else if (functionSelectedValue == "Create Municipal Court File")        //Jane S, 2019-01-24: Added for TiPSS project, SR-17-0375.
+            else if (functionSelectedValue == "Create Municipal Court File")        //Jane S, 2018-01-31: Added for TiPSS project, SR-17-0375.
             {
                 //processOnline();                      //Jane, 2019-11-28: Will be needed once Court Tyler Cashiering piece is in place.
                 processExport(functionSelectedValue);
@@ -705,10 +710,11 @@ namespace TRWeb
                     {
                         tempePayDestPath = ePayDestPath + fileName;
                         File.Copy(filePath, tempePayDestPath, true);
-                        runEPaymentProcess();                               //Jane, 2018-11-14: Added for AIMS project, SR-17-0256.
-                        processImport("Police", fileName);                        
-                        //Jane S, 2019-01-24: Per Dani F, the new Court SSIS package (ERPLoadMMCCOM.dtsx) will process only the COM_TRE file and **not** COM_CDA.
-                        processImport("Court", fileName);						
+                        runEPaymentProcess();                               //Jane, 11/14/2018: Added for AIMS project, SR-17-0256.
+                        processImport("Police", fileName);
+                        //Jane S, 2018-02-20: Added for TiPSS project, SR-17-0375. Need to run both COM_TRE & COM_CDA for TiPSS Court; eventually, just COM_TRE.
+                        //Jane S, 2018-11-28: ***UPDATE: Per Dani F, the new Court SSIS package will only process the COM_TRE file and **not** COM_CDA.
+                        processImport("Court", fileName);
                         runType = "Online";
                     }
                     else if (fileName.Contains("COM_CDA"))
@@ -716,7 +722,7 @@ namespace TRWeb
                         tempePayDestPath = ePayDestPath + fileName;
                         File.Copy(filePath, tempePayDestPath, true);
                         processImport("CDA", fileName);
-                        // processImport("Police", fileName);               // Kim G 8/4/2017 - Commented out old call to Parking Ticket file
+                        // processImport("Police", fileName);           // Kim G 8/4/2017 - Commented out old call to Parking Ticket file                     
                         processImport("Ambulance", fileName);
                         processImport("Appliance", fileName);
                         processImport("Misc", fileName);
@@ -779,7 +785,7 @@ namespace TRWeb
                         }
                     }
                 }
-                if (runType == "Online")
+                if (runType == "Online") // Riki 11/12/2018 - reference 1
                 {
                     runEPaymentProcess();                       //Jane, 11/14/2018: AIMS project, SR-17-0256.
 
@@ -879,7 +885,7 @@ namespace TRWeb
                             // *** Read the streams ***
                             string output = process.StandardOutput.ReadToEnd();
                             string error = process.StandardError.ReadToEnd();
-                            if(error == "")     // If no error occured,
+                            if (error == "")     // If no error occured,
                             {
                                 // Now archive the files
                                 Thread.Sleep(3000);     // Sleep for 3 seconds to be sure the upload is done
@@ -942,12 +948,12 @@ namespace TRWeb
                 {
                     package = app.LoadPackage(packagePath + "ERPLoadPRPONL.dtsx", null);
                 }
-                else if (functionSelectedValue == "Create Municipal Court File")                //Jane S, 2019-01-24: Added for TiPSS project, SR-17-0375.
+                else if (functionSelectedValue == "Create Municipal Court File")                //Jane S, 2018-01-26: Added for TiPSS project, SR-17-0375.
                 {
-                //Jane, 2019-01-24: Next line will get added after Tyler creates Municipal Court piece in Tyler Cashiering.
-                    //package = app.LoadPackage(packagePath + "ERPLoadMMCONL.dtsx", null);      //Jane S, 2019-01-24: Added for TiPSS project, SR-17-0375.
+                //Jane, 12-17-2018: Next line will get added after Tyler creates Municipal Court piece in Tyler Cashiering.
+                    //package = app.LoadPackage(packagePath + "ERPLoadMMCONL.dtsx", null);        //Jane S, 2018-01-26: Added for TiPSS project, SR-17-0375.
                 }
-				
+
                 resultText = resultText + "The process import table is complete." + Environment.NewLine + Environment.NewLine;
                 DTSExecResult results = package.Execute();
                 if (results == Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure)
@@ -1021,11 +1027,11 @@ namespace TRWeb
                 {
                     package = app.LoadPackage(packagePath + "ERPExportOLB.dtsx", null);
                 }
-                else if (type == "Create Municipal Court File") //Jane S, 2019-01-24: Added for TiPSS project, SR-17-0375.
+                else if (type == "Create Municipal Court File") //Jane S, 2018-01-26: Added for TiPSS project, SR-17-0375.
                 {
                     package = app.LoadPackage(packagePath + "ERPExportMMC.dtsx", null);
-                }                
-				else if (type == "Create Kubra Parking File")
+                }
+                else if (type == "Create Kubra Parking File")
                 {
                     package = app.LoadPackage(packagePath + "ERPExportPKU.dtsx", null);
                 }
@@ -1208,7 +1214,7 @@ namespace TRWeb
                         parms["ParmWorkStationID"].Value = userName;
                         parms["ParmWorkStationName"].Value = "myComputer";
                     }
-                    //Jane S, 2019-01-24: Added Court for TiPSS Project, SR-17-0375.
+                    //Jane S, 2018-01-29: Added Court for TiPSS Project, SR-17-0375.
                     else if (group == "Court")
                     {
                         package = app.LoadPackage(packagePath + "ERPLoadMMCCOM.dtsx", null);
@@ -1615,7 +1621,7 @@ namespace TRWeb
             return ReturnValue;
         }
 
-        /********** Jane, 2018-11-14: Created function for AIMS project, SR-17-0256, though code was previously in btnProcess_Click() **********/
+/********** Jane, 2018-11-14: Created function for AIMS project, SR-17-0256, though code was previously in btnProcess_Click() **********/
         public void runEPaymentProcess()
         {
             var reader = new AppSettingsReader();

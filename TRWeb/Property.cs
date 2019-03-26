@@ -207,8 +207,7 @@ namespace TRWeb
             if (type == "Personal")
             {
                 PPropertyAddressReq = new PropertyTaxAddressRequest();
-                PPropertyAddressReq.HouseNumber = Convert.ToDecimal(hseNum); 
-               // PPropertyAddressReq.HouseNumber = hseNum;
+                PPropertyAddressReq.HouseNumber = Int32.Parse(hseNum);
                 PPropertyAddressReq.StreetDirection = direction;
                 PPropertyAddressReq.StreetName = stName;
                 PPropertyAddressReq.StreetType = stType;
@@ -225,7 +224,7 @@ namespace TRWeb
             else
             {
                 RPropertyAddressReq = new PropertyTaxAddressRequest();
-                RPropertyAddressReq.HouseNumber = Convert.ToDecimal(hseNum);
+                RPropertyAddressReq.HouseNumber = Int32.Parse(hseNum);
                 RPropertyAddressReq.StreetDirection = direction;
                 RPropertyAddressReq.StreetName = stName;
                 RPropertyAddressReq.StreetType = stType;

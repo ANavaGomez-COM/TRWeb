@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("City of Madison")]
 [assembly: AssemblyProduct("TRWeb")]
-[assembly: AssemblyCopyright("Copyright © City of Madison 2014")]
+[assembly: AssemblyCopyright("Copyright © City of Madison 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
