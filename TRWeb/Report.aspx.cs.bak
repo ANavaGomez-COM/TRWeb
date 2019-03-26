@@ -76,7 +76,6 @@ namespace TRWeb
             ddlReportName.Items.Add("Process Summary");
             ddlReportName.Items.Add("Monthly Report for US Bank");
             ddlReportName.Items.Add("Web Summary by Type, Date");
-
             // KG Added new reporting for IT 1/4/2017
             if (userInfo.Count > 0)
             {
@@ -88,8 +87,6 @@ namespace TRWeb
                     ddlReportName.Items.Add("Export Summary");
                     ddlReportName.Items.Add("Deposit Worksheet");               //Added by ITJBS, 7/24/2017.
                     ddlReportName.Items.Add("Transactions by Date");            //Added by ITKG, 01/24/2018
-                    ddlReportName.Items.Add("Online Payment Detail");           //Added by ITALN, 01/08/2019
-                    ddlReportName.Items.Add("Missing Online Parking Ticket Numbers");       //Added by ITJBS, 1/9/2019 (SR-19-0004)
                 }
                 else if (a.UserGroup == "Treasurer")                            //Separated Treasurer from Water, CDA, Police - ITJBS 7/24/2017
                 {
@@ -97,15 +94,8 @@ namespace TRWeb
                     ddlReportName.Items.Add("Import Summary");                  //Added by ITJBS, 9/25/2017.
                     ddlReportName.Items.Add("Export Summary");
                     ddlReportName.Items.Add("Transactions by Date");            //Added by ITKG, 01/24/2018
-                    ddlReportName.Items.Add("Online Payment Detail");           //Added by ITALN, 01/08/2019
                 }
-                else if (a.UserGroup == "Police")                              //Added by ITJBS 1/9/2019 (SR-19-0004)
-                {
-                    ddlReportName.Items.Add("Export Summary");                              //Moved from last elseif section to below, ITJBS 1/9/2019.
-                    ddlReportName.Items.Add("Missing Online Parking Ticket Numbers");       //Added by ITJBS, 1/9/2019 (SR-19-0004)
-
-                }
-                else if ((a.UserGroup == "Water") || (a.UserGroup == "CDA") || (a.UserGroup == "Court"))  //Jane S, 2-20-2018 - Added Court for TiPSS project, SR-17-0375.
+                else if ((a.UserGroup == "Water") || (a.UserGroup == "CDA") || (a.UserGroup == "Police") || (a.UserGroup == "Court"))  //ITJBS, 2-20-2018 - Added Court.
                 {
                     ddlReportName.Items.Add("Export Summary");
                 }
@@ -171,19 +161,10 @@ namespace TRWeb
                     // reportPath = "/ERP Middleware/ERPReports/TRWebSummary";
                     reportName = reportPath + "DepositWorksheet";                   //Report previously called OnlineProcessSummary - ITJBS 8/2/2017
                 }
-                else if (ddlReportName.SelectedValue == "Transactions by Date")     //Added by ITKG, 1/24/2018.
+                else if (ddlReportName.SelectedValue == "Transactions by Date")        //Added by ITKG, 1/24/2018.
                 {
                     // reportPath = "/ERP Middleware/ERPReports/TRWebSummary";
                     reportName = reportPath + "TransactionsByDate";
-                }
-                else if (ddlReportName.SelectedValue == "Online Payment Detail")    //Added by ITALN, 01/08/2019.
-                {
-                    // reportPath = "/ERP Middleware/ERPReports/TRWebSummary";
-                    reportName = reportPath + "OnlinePaymentDetail";
-                }
-                else if (ddlReportName.SelectedValue == "Missing Online Parking Ticket Numbers")     //Added by ITJBS, 1/9/2019 (SR-19-0004).
-                {
-                    reportName = reportPath + "MissingOnlineParkingTicketNumbers";
                 }
                 else
                 {
@@ -210,8 +191,8 @@ namespace TRWeb
 
             try
             {
-                //Jane S, 2017-09-19: Changed MiscHeader line to get specific SourceType instead of just MSCCOM.
-                //Jane S, 2018-02-20: Added line for CourtHeader - TiPSS project, SR-17-0375.
+            //Changed MiscHeader line to get proper SourceType instead of just MSCCOM. - Jane S, 9/19/2017.
+            //Added line for CourtHeader. - Jane S, 2018-02-20
                 sqlStr = "SELECT * FROM (" +
                                   "SELECT DISTINCT BatchID, cast(ImportReportSentDate as date) ReportDate, CreatedDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM CDAHeader LEFT OUTER JOIN SourceType ST on CDAHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' " +
                         //"UNION ALL SELECT DISTINCT BatchID, cast(ImportReportSentDate as date) ReportDate, CreatedDate, ST.SourceType + ' - ' + ST.SourceTypeDescription + '<br>' + Type as SourceTypeDescription FROM MiscHeader LEFT OUTER JOIN SourceType ST on MiscHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' " +
@@ -257,7 +238,7 @@ namespace TRWeb
                 switch (a.UserGroup)
                 {
                     case "IT":
-                        //Jane S, 2018-02-20: Added line to query for CourtHeader - TiPSS project, SR-17-0375.
+                    //Added line to query for CourtHeader. - ITJBS, 2018-02-20.
                         {
                             sqlStr = "SELECT * FROM (" +
                                                "SELECT DISTINCT ExportedBatchID BatchID, cast(ExportReportSentDate as date) ReportDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM CDAHeader LEFT OUTER JOIN SourceType ST on CDAHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' AND ExportedBatchID IS NOT NULL " +
@@ -289,7 +270,7 @@ namespace TRWeb
                             sqlStr = "SELECT * FROM (SELECT DISTINCT ExportedBatchID BatchID, cast(ExportReportSentDate as date) ReportDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM ParkingHeader LEFT OUTER JOIN SourceType ST on ParkingHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' AND ExportedBatchID IS NOT NULL) as rs ";
                             break;
                         }
-                    //Jane S, 2018-02-20: Added new case for Court - TiPSS project, SR-17-0375.
+                    //Added new case for Court. - ITJBS, 2018-02-20.
                     case "Court":
                         {
                             sqlStr = "SELECT * FROM (SELECT DISTINCT ExportedBatchID BatchID, cast(ExportReportSentDate as date) ReportDate, ST.SourceType + ' - ' + ST.SourceTypeDescription as SourceTypeDescription FROM CourtHeader LEFT OUTER JOIN SourceType ST on CourtHeader.SourceType = ST.SourceType WHERE Cast(CreatedDate as date) = '" + sDate + "' AND ExportedBatchID IS NOT NULL) as rs ";

@@ -946,7 +946,7 @@ namespace TRWeb.CashieringService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal HouseNumberField;
+        private string HouseNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SecurityKeyField;
@@ -977,12 +977,12 @@ namespace TRWeb.CashieringService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal HouseNumber {
+        public string HouseNumber {
             get {
                 return this.HouseNumberField;
             }
             set {
-                if ((this.HouseNumberField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.HouseNumberField, value) != true)) {
                     this.HouseNumberField = value;
                     this.RaisePropertyChanged("HouseNumber");
                 }
@@ -1167,6 +1167,9 @@ namespace TRWeb.CashieringService {
         private int BatchIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DepositField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ParcelNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1177,6 +1180,12 @@ namespace TRWeb.CashieringService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PaymentIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PaymentMethodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ReceiptNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SecurityKeyField;
@@ -1203,6 +1212,19 @@ namespace TRWeb.CashieringService {
                 if ((this.BatchIDField.Equals(value) != true)) {
                     this.BatchIDField = value;
                     this.RaisePropertyChanged("BatchID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Deposit {
+            get {
+                return this.DepositField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DepositField, value) != true)) {
+                    this.DepositField = value;
+                    this.RaisePropertyChanged("Deposit");
                 }
             }
         }
@@ -1255,6 +1277,32 @@ namespace TRWeb.CashieringService {
                 if ((this.PaymentIDField.Equals(value) != true)) {
                     this.PaymentIDField = value;
                     this.RaisePropertyChanged("PaymentID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaymentMethod {
+            get {
+                return this.PaymentMethodField;
+            }
+            set {
+                if ((this.PaymentMethodField.Equals(value) != true)) {
+                    this.PaymentMethodField = value;
+                    this.RaisePropertyChanged("PaymentMethod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ReceiptNumber {
+            get {
+                return this.ReceiptNumberField;
+            }
+            set {
+                if ((this.ReceiptNumberField.Equals(value) != true)) {
+                    this.ReceiptNumberField = value;
+                    this.RaisePropertyChanged("ReceiptNumber");
                 }
             }
         }
@@ -1412,7 +1460,7 @@ namespace TRWeb.CashieringService {
         private string StreetNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal StreetNumberField;
+        private string StreetNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StreetTypeField;
@@ -1567,12 +1615,12 @@ namespace TRWeb.CashieringService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal StreetNumber {
+        public string StreetNumber {
             get {
                 return this.StreetNumberField;
             }
             set {
-                if ((this.StreetNumberField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.StreetNumberField, value) != true)) {
                     this.StreetNumberField = value;
                     this.RaisePropertyChanged("StreetNumber");
                 }

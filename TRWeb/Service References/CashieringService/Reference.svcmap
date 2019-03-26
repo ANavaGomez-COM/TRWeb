@@ -18,14 +18,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://erpbiztalktest.cityofmadison.com/CashieringService/CashieringService.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CashieringService3.xsd" MetadataType="Schema" ID="ab6c8518-ad90-419d-9cff-9173bc3e937c" SourceId="1" SourceUrl="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc?xsd=xsd0" />
-    <MetadataFile FileName="CashieringService8.xsd" MetadataType="Schema" ID="a28c6b33-e515-4149-8323-8e532103f04d" SourceId="1" SourceUrl="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CashieringService9.xsd" MetadataType="Schema" ID="1c2a19ec-f980-4bad-9237-027179d206f2" SourceId="1" SourceUrl="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CashieringService2.wsdl" MetadataType="Wsdl" ID="f79a613a-a59b-4eb7-9d71-6bcf48d2968b" SourceId="1" SourceUrl="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="CashieringService5.wsdl" MetadataType="Wsdl" ID="9e622f3a-9558-4166-b95e-79c6a2313f56" SourceId="1" SourceUrl="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc?wsdl" />
+    <MetadataFile FileName="CashieringService3.xsd" MetadataType="Schema" ID="35b84cca-844e-4b69-b2d3-16e1ba04e2aa" SourceId="1" SourceUrl="http://erpbiztalktest.cityofmadison.com/CashieringService/CashieringService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CashieringService2.wsdl" MetadataType="Wsdl" ID="26acabf5-99da-45e0-8812-8cd4a95606b1" SourceId="1" SourceUrl="http://erpbiztalktest.cityofmadison.com/CashieringService/CashieringService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CashieringService8.xsd" MetadataType="Schema" ID="1c2ba654-9b01-43c0-9822-cfe02204e9c1" SourceId="1" SourceUrl="http://erpbiztalktest.cityofmadison.com/CashieringService/CashieringService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CashieringService9.xsd" MetadataType="Schema" ID="9e4776e8-4b15-49b7-b79f-6e5c5c08c401" SourceId="1" SourceUrl="http://erpbiztalktest.cityofmadison.com/CashieringService/CashieringService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CashieringService5.wsdl" MetadataType="Wsdl" ID="29ff01c7-930e-47ca-ac02-726f2610776d" SourceId="1" SourceUrl="http://erpbiztalktest.cityofmadison.com/CashieringService/CashieringService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

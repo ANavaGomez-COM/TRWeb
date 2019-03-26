@@ -55,7 +55,8 @@ namespace TRWeb
 
             if (string.IsNullOrWhiteSpace(txtUserId.Text))
             {
-                lblUserIdError.Text = "You must enter a 5 letter User ID.";
+                //lblUserIdError.Text = "You must enter a 5 letter User ID."; //User IDs can now be 4-8 characters.
+                lblUserIdError.Text = "You must enter a valid User ID.";
                 valid = false;
             }
 
@@ -65,20 +66,21 @@ namespace TRWeb
                 valid = false;
             }
 
-            //Added by Jane S., 5/18/2017.
-            if (!IsUserIDValidLength(txtUserId.Text))
-            {
+            //Added by Jane S., 5/8/2017.
+            if (!IsUserIDValidLength(txtUserId.Text))   
+            {            
                 lblUserIdError.Text = "The User ID you entered is too long or too short; please enter a User ID from 4 to 8 characters.";
                 valid = false;
             }
 
-            /* No longer using IsFiveLettersLong due to User ID length being allowed to be longer or shorter. - Jane S. 5/18/2017
-                    if (!IsFiveLettersLong(txtUserId.Text))
-                    {
-                        lblUserIdError.Text = "Please enter a 5 letter User ID.";
-                        valid = false;
-                    }
+            /* No longer using IsFiveLettersLong due to User ID length being allowed to be longer or shorter. - Jane S. 5/8/2017
+                        if (!IsFiveLettersLong(txtUserId.Text))
+                        {
+                            lblUserIdError.Text = "Please enter a 5 letter User ID.";
+                            valid = false;
+                        }
             */
+
 
             if (valid)
             {
@@ -97,20 +99,18 @@ namespace TRWeb
         //Added by Jane S., 5/8/2017.
         public static bool IsUserIDValidLength(string str)
         {
-            /*** A User ID could be 4 - 6 characters for sure, so allowing 4-8 just in case. - Jane S. 5/8/2017 ***/
+        /*** A User ID could be 4 - 6 characters for sure, so allowing 4-8 just in case. - Jane S. 5/8/2017 ***/
             Regex rx = new Regex(@"^[a-zA-Z0-9]{4,8}$");
             return rx.IsMatch(str);
         }
 
-    /* A User ID could be other than five characters, so created new function IsUserIDValidLength. - Jane S. 5/8/2017
-
-        public static bool IsFiveLettersLong(string str)
-        {
-            Regex rx = new Regex(@"^[a-zA-Z]{5}$");
-            return rx.IsMatch(str);
-        }
-    */
-
+        /* A User ID could be other than five characters, so created new function IsUserIDValidLength. - Jane S. 5/8/2017
+                public static bool IsFiveLettersLong(string str)
+                {
+                    Regex rx = new Regex(@"^[a-zA-Z]{5}$");
+                    return rx.IsMatch(str);
+                }
+        */
         public static bool IsValidEmail(string email)
         {
             Regex rx = new Regex(

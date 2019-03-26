@@ -115,7 +115,7 @@ namespace TRWeb
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            processRequest(searchSelectedValue, false);          
+            processRequest(searchSelectedValue, false);
         }
 
         protected void lstSourceList_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -270,7 +270,7 @@ namespace TRWeb
             grdResult.DataBind();
             grdResult.AlternatingRowStyle.BackColor = System.Drawing.Color.LightGray;
         }
-        
+
         protected void btnAddEmailNotif_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/NotifAdd.aspx");
@@ -298,7 +298,7 @@ namespace TRWeb
             grdResult.DataBind();
             grdResult.AlternatingRowStyle.BackColor = System.Drawing.Color.LightGray;
         }
-        
+
         protected void btnAddUser_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/AuthAdd.aspx");
@@ -603,7 +603,7 @@ namespace TRWeb
             return rx.IsMatch(email);
         }
 
-        public Boolean confirmBox(string Message) 
+        public Boolean confirmBox(string Message)
         {
             Boolean resp = false;
             this.Page.ClientScript.RegisterStartupScript(this.Page.GetType(), "MessageBox",
@@ -616,7 +616,9 @@ namespace TRWeb
         {
             Application app = new Application();
             Package package = null;
-            string password = "OFu=m?ujriK[";
+            var reader = new AppSettingsReader();
+            //string password = "OFu=m?ujriK[";
+            string password = (reader.GetValue("ssisPwd", typeof(string))).ToString();
             string resultText = "";
 
             try

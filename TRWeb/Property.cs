@@ -42,7 +42,10 @@ namespace TRWeb
         private string xNumber;
         private string xName1;
         private string xName2;
-        private decimal xHouseNumber;
+        
+        //private decimal xHouseNumber;  //ITJBS 12-18-2016
+        private string xHouseNumber;
+
         private string xStreetDirection;
         private string xStreetName;
         private string xStreetType;
@@ -72,7 +75,8 @@ namespace TRWeb
             set { xName2 = value; }
         }
 
-        public decimal HouseNumber
+        //public decimal HouseNumber   //ITBS 12-18-2016
+        public string HouseNumber
         {
             get { return xHouseNumber; }
             set {xHouseNumber = value; }
@@ -207,8 +211,7 @@ namespace TRWeb
             if (type == "Personal")
             {
                 PPropertyAddressReq = new PropertyTaxAddressRequest();
-                PPropertyAddressReq.HouseNumber = Convert.ToDecimal(hseNum); 
-               // PPropertyAddressReq.HouseNumber = hseNum;
+                PPropertyAddressReq.HouseNumber = hseNum;
                 PPropertyAddressReq.StreetDirection = direction;
                 PPropertyAddressReq.StreetName = stName;
                 PPropertyAddressReq.StreetType = stType;
@@ -225,7 +228,7 @@ namespace TRWeb
             else
             {
                 RPropertyAddressReq = new PropertyTaxAddressRequest();
-                RPropertyAddressReq.HouseNumber = Convert.ToDecimal(hseNum);
+                RPropertyAddressReq.HouseNumber = hseNum;
                 RPropertyAddressReq.StreetDirection = direction;
                 RPropertyAddressReq.StreetName = stName;
                 RPropertyAddressReq.StreetType = stType;
@@ -429,7 +432,7 @@ namespace TRWeb
                         prop.Name1 = RPropertyBalResp.OwnerName1;
                         prop.Name2 = RPropertyBalResp.OwnerName2;
                         prop.Address = RPropertyBalResp.Address;
-                        prop.HouseNumber = RPropertyBalResp.FirstInstallment;
+                        //prop.HouseNumber = RPropertyBalResp.FirstInstallment;
                         prop.StreetDirection = string.Format("{0:C}", RPropertyBalResp.SecondInstallment);
                         prop.StreetName = string.Format("{0:C}", RPropertyBalResp.ThirdInstallment);
                         prop.StreetType = string.Format("{0:C}", RPropertyBalResp.FourthInstallment);
@@ -437,7 +440,7 @@ namespace TRWeb
                         sb = sb + "    Owner Name: " + prop.Name1.ToString() + "\r\n";
                         sb = sb + "    Owner Name 2: " + prop.Name2.ToString() + "\r\n";
                         sb = sb + "    Address: " + prop.Address.ToString() + "\r\n";
-                        sb = sb + "    First Installment: " + prop.HouseNumber.ToString("C") + "\r\n";
+                        //sb = sb + "    First Installment: " + prop.HouseNumber.ToString("C") + "\r\n";
                         sb = sb + "    Second Installment: " + prop.StreetDirection.ToString() + "\r\n";
                         sb = sb + "    Third Installment: " + prop.StreetName.ToString() + "\r\n";
                         sb = sb + "    Fourth Installment: " + prop.StreetType.ToString() + "\r\n";  
@@ -478,7 +481,7 @@ namespace TRWeb
                             prop.Name1 = RPropertyBalResp.OwnerName1;
                             prop.Name2 = RPropertyBalResp.OwnerName2;
                             prop.Address = RPropertyBalResp.Address;
-                            prop.HouseNumber = RPropertyBalResp.FirstInstallment;
+                            //prop.HouseNumber = RPropertyBalResp.FirstInstallment;
                             prop.StreetDirection = string.Format("{0:C}", RPropertyBalResp.SecondInstallment);
                             prop.StreetName = string.Format("{0:C}", RPropertyBalResp.ThirdInstallment);
                             prop.StreetType = string.Format("{0:C}", RPropertyBalResp.FourthInstallment);
@@ -569,7 +572,7 @@ namespace TRWeb
                             prop.Name1 = RPropertyBalResp.OwnerName1;
                             prop.Name2 = RPropertyBalResp.OwnerName2;
                             prop.Address = RPropertyBalResp.Address;
-                            prop.HouseNumber = RPropertyBalResp.FirstInstallment;
+                            //prop.HouseNumber = RPropertyBalResp.FirstInstallment;
                             prop.StreetDirection = string.Format("{0:C}", RPropertyBalResp.SecondInstallment);
                             prop.FullAmount = string.Format("{0:C}", RPropertyBalResp.FullAmount);
                             result.Add(prop);

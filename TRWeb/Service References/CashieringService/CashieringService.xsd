@@ -166,7 +166,7 @@
   </xs:element>
   <xs:complexType name="PropertyTaxAddressRequest">
     <xs:sequence>
-      <xs:element minOccurs="0" name="HouseNumber" type="xs:decimal" />
+      <xs:element minOccurs="0" name="HouseNumber" type="xs:string" />
       <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SecurityPortalId" type="xs:long" />
       <xs:element minOccurs="0" name="StreetDirection" nillable="true" type="xs:string" />

@@ -1,61 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="\\erpbiztalk\inetpub\wwwroot\TRWeb" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+  <publishProfile publishUrl="\\erpbiztalktest\inetpub\wwwroot\TRWeb" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
     <file relUrl="Service References/CashieringService/Reference.cs" publishTime="03/31/2015 09:30:54" />
     <file relUrl="Default.aspx" publishTime="01/12/2016 15:45:42" />
     <file relUrl="Properties/Settings.settings" publishTime="03/30/2015 15:20:37" />
     <file relUrl="NotifAdd.aspx.designer.cs" publishTime="12/02/2014 08:12:53" />
     <file relUrl="Source.cs" publishTime="12/01/2014 15:25:13" />
-    <file relUrl="UserError.aspx" publishTime="11/19/2014 09:14:32" />
     <file relUrl="Portal.aspx.cs" publishTime="11/19/2014 15:07:15" />
+    <file relUrl="UserError.aspx" publishTime="11/19/2014 09:14:32" />
+    <file relUrl="Styles/Site.css" publishTime="09/09/2015 16:50:14" />
     <file relUrl="Water.cs" publishTime="09/09/2014 13:41:54" />
     <file relUrl="Report.aspx.designer.cs" publishTime="12/16/2014 11:14:20" />
-    <file relUrl="WaterBill.aspx.designer.cs" publishTime="12/03/2014 11:18:20" />
-    <file relUrl="Web.config" publishTime="04/07/2016 10:10:43" />
+    <file relUrl="UserError.aspx.designer.cs" publishTime="11/19/2014 09:14:22" />
+    <file relUrl="Web.config" publishTime="04/07/2016 10:08:59" />
     <file relUrl="Service References/CashieringService/TRWeb.CashieringService.PortalResponse.datasource" publishTime="03/31/2015 09:30:56" />
     <file relUrl="Web References/sqlentdb1ReportService/ReportExecution2005.wsdl" publishTime="03/30/2015 15:21:09" />
     <file relUrl="Housing.aspx" publishTime="12/03/2014 11:00:53" />
     <file relUrl="Service References/CashieringService/TRWeb.CashieringService.AccelaResponse.datasource" publishTime="03/31/2015 09:30:56" />
     <file relUrl="Service References/CashieringService/TRWeb.CashieringService.ParkingTicketResponse.datasource" publishTime="03/31/2015 09:30:55" />
-    <file relUrl="Web References/sqlentdb1ReportService/ExecutionInfo21.datasource" publishTime="03/30/2015 15:21:09" />
+    <file relUrl="SourceAdd.aspx.cs" publishTime="12/02/2014 08:18:48" />
     <file relUrl="Global.asax" publishTime="08/13/2014 08:46:44" />
-    <file relUrl="UserError.aspx.designer.cs" publishTime="11/19/2014 09:14:22" />
+    <file relUrl="bin/TRWeb.dll" publishTime="04/07/2016 10:08:47" />
+    <file relUrl="Web References/sqlentdb1ReportService/Warning1.datasource" publishTime="03/30/2015 15:21:09" />
     <file relUrl="WaterBill.aspx" publishTime="12/03/2014 11:21:40" />
     <file relUrl="Auth.cs" publishTime="09/09/2015 11:58:39" />
     <file relUrl="Properties/AssemblyInfo.cs" publishTime="08/13/2014 08:46:46" />
     <file relUrl="Service References/CashieringService/configuration91.svcinfo" publishTime="03/31/2015 09:30:53" />
-    <file relUrl="Property.cs" publishTime="12/17/2015 16:02:25" />
-    <file relUrl="Report.aspx" publishTime="09/10/2015 11:13:19" />
+    <file relUrl="Service References/CashieringService/CashieringService.xsd" publishTime="09/26/2014 11:49:05" />
     <file relUrl="Administration.aspx" publishTime="09/09/2015 11:23:57" />
     <file relUrl="Service References/CashieringService/CashieringService2.xsd" publishTime="09/26/2014 11:49:05" />
     <file relUrl="Service References/CashieringService/TRWeb.CashieringService.UpdateResponse.datasource" publishTime="03/31/2015 09:30:56" />
     <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="08/13/2014 08:46:44" />
     <file relUrl="Service References/CashieringService/TRWeb.CashieringService.CDABalanceResponse.datasource" publishTime="03/31/2015 09:30:55" />
+    <file relUrl="WSPortal.cs" publishTime="11/19/2014 15:08:38" />
+    <file relUrl="Web References/sqlentdb1ReportService/ExecutionInfo1.datasource" publishTime="03/30/2015 15:21:09" />
     <file relUrl="Scripts/jquery-1.4.1.js" publishTime="08/13/2014 08:46:44" />
     <file relUrl="Ticket.aspx.designer.cs" publishTime="12/03/2014 10:37:53" />
-    <file relUrl="Default.aspx.cs" publishTime="04/07/2016 10:10:26" />
+    <file relUrl="SourceAdd.aspx.designer.cs" publishTime="12/02/2014 08:18:30" />
+    <file relUrl="Default.aspx.cs" publishTime="04/07/2016 10:08:45" />
     <file relUrl="Portal.aspx" publishTime="11/19/2014 11:24:42" />
-    <file relUrl="TRWeb.csproj" publishTime="08/21/2015 16:35:20" />
+    <file relUrl="TRWeb.csproj" publishTime="02/26/2016 14:25:17" />
     <file relUrl="WaterBill.aspx.cs" publishTime="12/03/2014 11:25:21" />
     <file relUrl="Web References/sqlentdb1ReportService/Reference.cs" publishTime="03/30/2015 15:21:08" />
-    <file relUrl="PropertyTax.aspx" publishTime="12/03/2014 11:28:06" />
     <file relUrl="SourceAdd.aspx" publishTime="12/02/2014 08:18:49" />
     <file relUrl="Ticket.aspx" publishTime="12/03/2014 10:38:55" />
-    <file relUrl="bin/TRWeb.pdb" publishTime="04/07/2016 10:10:28" />
+    <file relUrl="bin/TRWeb.pdb" publishTime="04/07/2016 10:08:47" />
     <file relUrl="Portal.aspx.designer.cs" publishTime="11/19/2014 11:23:21" />
-    <file relUrl="SourceAdd.aspx.designer.cs" publishTime="12/02/2014 08:18:30" />
+    <file relUrl="PropertyTax.aspx" publishTime="12/03/2014 11:28:06" />
     <file relUrl="Service References/CashieringService/Reference.svcmap" publishTime="03/31/2015 09:30:53" />
     <file relUrl="Default.aspx.designer.cs" publishTime="01/12/2016 15:44:23" />
     <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="08/13/2014 08:46:44" />
     <file relUrl="AuthAdd.aspx.designer.cs" publishTime="12/02/2014 09:57:22" />
     <file relUrl="Administration.aspx.cs" publishTime="09/09/2015 14:49:13" />
-    <file relUrl="Styles/Site.css" publishTime="09/09/2015 16:50:14" />
     <file relUrl="Service References/CashieringService/CashieringService.wsdl" publishTime="09/26/2014 11:49:05" />
     <file relUrl="Housing.aspx.designer.cs" publishTime="12/03/2014 11:00:50" />
     <file relUrl="Site.Master" publishTime="07/28/2015 13:09:14" />
     <file relUrl="ParkingTicket.cs" publishTime="09/10/2014 09:44:35" />
+    <file relUrl="WaterBill.aspx.designer.cs" publishTime="12/03/2014 11:18:20" />
     <file relUrl="Web References/sqlentdb1ReportService/DocumentMapNode1.datasource" publishTime="03/30/2015 15:21:09" />
-    <file relUrl="BizData.cs" publishTime="09/10/2015 15:43:04" />
     <file relUrl="AuthAdd.aspx" publishTime="12/02/2014 09:57:40" />
     <file relUrl="Service References/CashieringService/CashieringService1.xsd" publishTime="09/26/2014 11:49:05" />
     <file relUrl="Web References/sqlentdb1ReportService/Reference.map" publishTime="03/30/2015 15:21:09" />
@@ -65,31 +67,29 @@
     <file relUrl="Web.Release.config" publishTime="08/13/2014 08:46:44" />
     <file relUrl="CDA.cs" publishTime="10/22/2014 14:10:02" />
     <file relUrl="Properties/Settings.Designer.cs" publishTime="03/30/2015 15:20:37" />
-    <file relUrl="Web References/sqlentdb1ReportService/ExecutionInfo1.datasource" publishTime="03/30/2015 15:21:09" />
+    <file relUrl="Property.cs" publishTime="12/17/2015 16:02:25" />
     <file relUrl="Administration.aspx.designer.cs" publishTime="09/09/2015 10:17:00" />
-    <file relUrl="TRWeb.csproj.user" publishTime="10/26/2015 09:10:45" />
     <file relUrl="Site.Master.cs" publishTime="11/19/2014 11:21:32" />
     <file relUrl="NotifAdd.aspx" publishTime="12/02/2014 08:26:11" />
-    <file relUrl="PropertyTax.aspx.cs" publishTime="12/08/2014 09:04:56" />
-    <file relUrl="Service References/CashieringService/CashieringService.xsd" publishTime="09/26/2014 11:49:05" />
+    <file relUrl="TRWeb.csproj.user" publishTime="02/26/2016 14:25:16" />
     <file relUrl="Global.asax.cs" publishTime="08/13/2014 08:46:46" />
     <file relUrl="PropertyTax.aspx.designer.cs" publishTime="12/03/2014 11:28:06" />
     <file relUrl="Web References/sqlentdb1ReportService/Extension1.datasource" publishTime="03/30/2015 15:21:09" />
     <file relUrl="Service References/CashieringService/configuration.svcinfo" publishTime="03/31/2015 09:30:53" />
     <file relUrl="Service References/CashieringService/TRWeb.CashieringService.CreateDWRecordResponse.datasource" publishTime="03/31/2015 09:30:55" />
     <file relUrl="Site.Master.designer.cs" publishTime="08/14/2014 09:56:51" />
-    <file relUrl="Report.aspx.cs" publishTime="09/10/2015 11:13:19" />
-    <file relUrl="bin/TRWeb.dll" publishTime="04/07/2016 10:10:28" />
+    <file relUrl="Report.aspx.cs" publishTime="02/02/2016 11:30:09" />
+    <file relUrl="PropertyTax.aspx.cs" publishTime="12/08/2014 09:04:56" />
     <file relUrl="Service References/CashieringService/CashieringService1.wsdl" publishTime="09/26/2014 11:49:05" />
     <file relUrl="Ticket.aspx.cs" publishTime="12/03/2014 10:52:50" />
-    <file relUrl="WSPortal.cs" publishTime="11/19/2014 15:08:38" />
+    <file relUrl="Web References/sqlentdb1ReportService/ExecutionInfo21.datasource" publishTime="03/30/2015 15:21:09" />
     <file relUrl="Housing.aspx.cs" publishTime="12/03/2014 11:01:18" />
     <file relUrl="Service References/CashieringService/TRWeb.CashieringService.PersonalPropertyTaxResponse.datasource" publishTime="03/31/2015 09:30:55" />
     <file relUrl="AuthAdd.aspx.cs" publishTime="12/02/2014 09:59:16" />
     <file relUrl="UserError.aspx.cs" publishTime="11/19/2014 09:14:27" />
     <file relUrl="Web.Debug.config" publishTime="08/13/2014 08:46:44" />
-    <file relUrl="SourceAdd.aspx.cs" publishTime="12/02/2014 08:18:48" />
+    <file relUrl="Report.aspx" publishTime="03/31/2015 10:30:25" />
     <file relUrl="NotifAdd.aspx.cs" publishTime="12/02/2014 08:25:14" />
-    <file relUrl="Web References/sqlentdb1ReportService/Warning1.datasource" publishTime="03/30/2015 15:21:09" />
+    <file relUrl="BizData.cs" publishTime="09/10/2015 15:43:04" />
   </publishProfile>
 </publishData>

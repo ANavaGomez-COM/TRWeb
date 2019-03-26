@@ -88,6 +88,7 @@ namespace TRWeb
                     lblNotifEmailError.Text = "Unable to add " + txtNotifEmail.Text;
                 }
             }
+
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

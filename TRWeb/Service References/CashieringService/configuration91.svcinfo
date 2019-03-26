@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="3NAu0dnzQKmNKnu/sRZGZc0rfG0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="02ZtShUEYAFeGgMC6rC8iXTe4v4=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICashieringService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ICashieringService" contract="CashieringService.ICashieringService" bindingType="basicHttpBinding" address="http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc" bindingConfiguration="BasicHttpBinding_ICashieringService">
+    <endpoint name="BasicHttpBinding_ICashieringService" contract="CashieringService.ICashieringService" bindingType="basicHttpBinding" address="http://erpbiztalktest.cityofmadison.com/CashieringService/CashieringService.svc" bindingConfiguration="BasicHttpBinding_ICashieringService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://erpbiztalk.cityofmadison.com/CashieringService/CashieringService.svc</serializedValue>
+          <serializedValue>http://erpbiztalktest.cityofmadison.com/CashieringService/CashieringService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
