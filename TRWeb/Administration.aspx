@@ -16,11 +16,7 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2>ADMINISTRATION</h2>
-<<<<<<< HEAD
     <div>Use the boxes below to load related Source, Notification and User information. Hello, World.</div>
-=======
-    <div>Use the boxes below to load related Source, Notification and User information. Hello, Riki!!!</div>
->>>>>>> develop
     <%--adding environmental settings comparison between URL and web.config--itjas, 9/26/2018--%>
     <div style="float:right">
         <asp:Label ID="lblWebConfig" runat="server" Text="Environment: "></asp:Label>
