@@ -1,11 +1,7 @@
 *.config
 *.dll
-<<<<<<< HEAD
 *.pdb
 *.cache
 *.txt
 *.user
 
-=======
-.vs/config/applicationhost.config
->>>>>>> develop
