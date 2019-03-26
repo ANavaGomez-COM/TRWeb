@@ -9,3 +9,17 @@ F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Test\TRW
 F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Test\TRWeb\TRWeb\obj\Release\TRWeb.dll
 F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Test\TRWeb\TRWeb\obj\Release\TRWeb.pdb
 F:\Information Technology\Applications and Systems\ERPMiddleware\Source\Test\TRWeb\TRWeb\obj\Release\TRWeb.XmlSerializers.dll
+C:\GitHub\TRWeb\TRWeb\bin\TRWeb.dll.config
+C:\GitHub\TRWeb\TRWeb\bin\TRWeb.dll
+C:\GitHub\TRWeb\TRWeb\bin\TRWeb.XmlSerializers.dll
+C:\GitHub\TRWeb\TRWeb\bin\TRWeb.pdb
+C:\GitHub\TRWeb\TRWeb\bin\Microsoft.ReportViewer.WebForms.dll
+C:\GitHub\TRWeb\TRWeb\bin\Microsoft.SQLServer.ManagedDTS.dll
+C:\GitHub\TRWeb\TRWeb\bin\Microsoft.ReportViewer.Common.dll
+C:\GitHub\TRWeb\TRWeb\bin\Microsoft.SqlServer.PipelineHost.dll
+C:\GitHub\TRWeb\TRWeb\bin\Microsoft.SqlServer.DTSPipelineWrap.dll
+C:\GitHub\TRWeb\TRWeb\bin\Microsoft.ReportViewer.WebForms.xml
+C:\GitHub\TRWeb\TRWeb\obj\Release\TRWeb.csprojResolveAssemblyReference.cache
+C:\GitHub\TRWeb\TRWeb\obj\Release\TRWeb.dll
+C:\GitHub\TRWeb\TRWeb\obj\Release\TRWeb.pdb
+C:\GitHub\TRWeb\TRWeb\obj\Release\TRWeb.XmlSerializers.dll

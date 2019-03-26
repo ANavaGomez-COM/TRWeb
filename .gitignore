@@ -1,1 +1,7 @@
-web.config
+*.config
+*.dll
+*.pdb
+*.cache
+*.txt
+*.user
+
