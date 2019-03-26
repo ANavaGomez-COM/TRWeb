@@ -1,6 +1,10 @@
-web.config
+*web.config
 TRWeb/bin/Microsoft.SqlServer.DTSPipelineWrap.dll
 TRWeb/bin/Microsoft.SqlServer.PipelineHost.dll
 TRWeb/obj/Release/Package/PackageTmp/bin/Microsoft.SqlServer.DTSPipelineWrap.dll
 TRWeb/obj/Release/Package/PackageTmp/bin/Microsoft.SQLServer.ManagedDTS.dll
 TRWeb/obj/Release/Package/PackageTmp/bin/Microsoft.SqlServer.PipelineHost.dll
+.vs/config/applicationhost.config
+.vs/config/applicationhost.config
+.vs/TRWeb/v14/.suo
+TRWeb/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
