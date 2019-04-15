@@ -1,3 +1,4 @@
 *.config
 *.dll
 .vs/config/applicationhost.config
+.vs/TRWeb/v14/.suo
